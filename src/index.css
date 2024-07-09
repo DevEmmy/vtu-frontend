@@ -27,11 +27,11 @@
 }
 
 .auth{
-    @apply flex flex-col gap-3 w-full
+    @apply flex flex-col gap-5 w-full
 }
 
 .auth > div {
-    @apply flex items-center gap-2 w-full bg-gray-50 p-3
+    @apply flex items-center gap-2 w-full bg-gray-100 p-3 rounded-3xl
 }
 
 .auth > div > input{

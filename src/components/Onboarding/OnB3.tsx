@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const OnB3 = () => {
     return (
-        <div className='h-[100vh] flex flex-col '>
+        <div className='pb-3 flex flex-col '>
             <img src="./ob3.png" className='w-full mx-auto object-contain' alt="" />
 
             <div className="steps">
@@ -25,9 +25,13 @@ const OnB3 = () => {
                     </button>
                 </Link>
 
-                <button className='border border-primary text-primary font-semibold py-3 px-10 w-full rounded-full'>
-                    Sign up
-                </button>
+                <Link to={"/new-account"}>
+                    <button className='border border-primary text-primary font-semibold py-3 px-10 w-full rounded-full'>
+                        Sign up
+                    </button>
+                </Link>
+
+                
 
 
             </div>

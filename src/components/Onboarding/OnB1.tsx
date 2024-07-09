@@ -6,8 +6,8 @@ interface Props {
 
 const OnB1 = ({ next }: Props) => {
     return (
-        <div className='h-[100vh] flex flex-col '>
-            <img src="./ob1.png" className='w-full mx-auto object-contain' alt="" />
+        <div className='flex flex-col pb-3'>
+            <img src="./ob1.png" className='w-full object-contain' alt="" />
 
             <div className="steps">
                 <div className="line !bg-white !opacity-100" />
