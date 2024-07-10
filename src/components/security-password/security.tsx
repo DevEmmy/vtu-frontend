@@ -3,6 +3,7 @@ import img1 from '../../../public/security1.png'
 import { RiArrowLeftLine } from 'react-icons/ri'
 import { HiOutlineBackspace } from "react-icons/hi2";
 import check from "../../../public/CHECK.png"
+import { Link } from 'react-router-dom';
 
 
 const PasswordInputScreen = () => {
@@ -83,13 +84,16 @@ const PasswordInputScreen = () => {
         Set Password
         </button>
 
-        {!isTrue && 
+        {isTrue && 
         <div className='absolute top-0 left-0 w-[100%] h-full z-10 flex flex-col justify-end bg-[rgba(0,0,0,0.4)]'>
             <div className=' bg-white py-20 px-3 rounded-t-2xl flex items-center flex-col gap-7'>
           <img src={check} alt="" />
           <h1 className='font-semibold text-xl'>Successful</h1>
           <p className='text-sm text-gray-500'>You have successfully set up a password</p>
-          <button className='font-bold text-white bg-primary w-full py-2 rounded-3xl'>Get Started</button>
+          <Link to={"/home"} className='w-full'>
+              <button className='font-bold text-white bg-primary w-full py-2 rounded-3xl'>Get Started</button>
+          </Link>
+          
         </div>
         </div>
         

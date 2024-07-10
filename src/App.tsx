@@ -4,6 +4,8 @@ import Login from './components/create-account/Login'
 import NewAccount from './components/create-account/New-account'
 import Security from './components/security-password/security'
 
+import Index from './components/home/index'
+
 function App() {
 
   return (
@@ -12,9 +14,8 @@ function App() {
         <Route path='/' element={<Onboarding />} />
         <Route path='/login' element={<Login />} />
         <Route path='/new-account' element={<NewAccount />}></Route>
-        <Route path='/security' element={<Security onSuccess={function (): void {
-          throw new Error('Function not implemented.')
-        } } />}></Route>
+        <Route path='/security' element={<Security />}></Route>
+        <Route path='/home' element={<Index />}></Route>
       </Routes>
     </Router>
   )
