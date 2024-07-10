@@ -45,7 +45,7 @@ const service = [
   {
       img: <IoChatbubblesOutline />,
       title: "Bulk SMS",
-        link: '/fund-wallet'
+        link: '/bulk-sms'
   },
   {
       img: <TbMobiledata />,

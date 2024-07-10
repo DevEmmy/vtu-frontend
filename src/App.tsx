@@ -5,6 +5,7 @@ import NewAccount from './components/create-account/New-account'
 import Security from './components/security-password/security'
 import FundWallet from './components/home/fund-wallet'
 import Index from './components/home/dashboard'
+import BulkSMS from './components/home/bulk-sms'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/security' element={<Security />}></Route>
         <Route path='/home' element={<Index />}></Route>
         <Route path='/fund-wallet' element={<FundWallet />}></Route>
+        <Route path='/bulk-sms' element={<BulkSMS />}></Route>
       </Routes>
     </Router>
   )
