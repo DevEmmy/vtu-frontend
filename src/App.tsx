@@ -7,6 +7,7 @@ import FundWallet from './components/home/fund-wallet'
 import Index from './components/home/dashboard'
 import BulkSMS from './components/home/bulk-sms'
 import BuyData from './components/home/buy-data'
+import BuyAirtime from './components/home/buy-airtime'
 import Successful from './components/home/successful'
 import Reciept from './components/home/reciept'
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/successful' element={<Successful />}></Route>
         <Route path='/buy-data' element={<BuyData />}></Route>
         <Route path='/reciept' element={<Reciept />}></Route>
+        <Route path='/buy-airtime' element={<BuyAirtime />}></Route>
       </Routes>
     </Router>
   )

@@ -32,7 +32,7 @@ function dashboard() {
     {
         img: <BsTelephone />,
         title: "Buy Airtime",
-        link: '/fund-wallet'
+        link: '/buy-airtime'
     },
     {
         img: <IoReceiptOutline />,
