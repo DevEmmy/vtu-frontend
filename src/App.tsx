@@ -6,6 +6,9 @@ import Security from './components/security-password/security'
 import FundWallet from './components/home/fund-wallet'
 import Index from './components/home/dashboard'
 import BulkSMS from './components/home/bulk-sms'
+import BuyData from './components/home/buy-data'
+import Successful from './components/home/successful'
+import Reciept from './components/home/reciept'
 
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
         <Route path='/home' element={<Index />}></Route>
         <Route path='/fund-wallet' element={<FundWallet />}></Route>
         <Route path='/bulk-sms' element={<BulkSMS />}></Route>
+        <Route path='/successful' element={<Successful />}></Route>
+        <Route path='/buy-data' element={<BuyData />}></Route>
+        <Route path='/reciept' element={<Reciept />}></Route>
       </Routes>
     </Router>
   )

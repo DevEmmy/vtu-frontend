@@ -20,7 +20,7 @@ function bulkSms() {
                 <input type="text" className='w-full' placeholder='Type your message here'/>
             </div>
 
-            <button className='text-white font-semibold bg-primary py-3 rounded-3xl'>Confirm</button>
+            <Link to={'/successful'} className='text-white text-center font-semibold bg-primary py-3 rounded-3xl'>Confirm</Link>
 
 
             

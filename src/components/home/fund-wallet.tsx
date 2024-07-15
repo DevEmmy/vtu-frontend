@@ -6,24 +6,25 @@ import { Link } from 'react-router-dom';
 
 
 function fundWallet() {
+  const accountNumber = '806 698 3809'
   return (
     <div className='px-3 py-5 flex flex-col gap-7 min-h-screen'>
         <Link to={"/home"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
         <h1 className='text-xl font-bold'>Fund Wallet</h1>
-        <form action="" className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-5'>
           
             <div className='border-b-2 pb-2'>
-              <label htmlFor="phone-number" className='text-xs text-gray-400'>VTU Telecommunication Account Number</label>
-              <div className='flex items-center'>
-                <input type="phone" id='phone-number' name='phone-number' /><IoCopyOutline className='text-primary'/>
+              <div className='text-xs text-gray-400'>VTU Telecommunication Account Number</div>
+              <div className='flex items-center gap-2 mt-2'>
+                <h3 className='font-semibold'>{accountNumber}</h3><IoCopyOutline className='text-primary hover:text-blue-600'/>
               </div>
             </div>
             
 
             <div className='border-b-2 pb-2'>
-              <label htmlFor="bank" className='text-xs text-gray-400'>Choose Bank</label>
+              <div className='text-xs text-gray-400'>Choose Bank</div>
               <div className='flex items-center'>
                 <div className='mr-2 w-14 h-14 rounded-full bg-gray-200'></div>
                 <h1 className='font-bold'>Access Bank</h1>
@@ -35,10 +36,11 @@ function fundWallet() {
               <h1 className='font-bold'>MEGAPAY</h1>
             </div>
 
-            <button className='bg-pale flex items-center justify-center gap-2 py-3 rounded-3xl text-primary font-semibold'><GoShareAndroid />Share Account Information</button>
+            
+            <Link to={'/successful'} className='bg-pale flex items-center justify-center gap-2 py-3 rounded-3xl text-primary font-semibold'><GoShareAndroid />Share Account Invitation</Link>
           
           
-        </form>
+        </div>
 
       <div className="bg-white">
         <h2 className="font-bold mb-8">How to transfer to megapay ?</h2>

@@ -27,7 +27,7 @@ function dashboard() {
     {
         img: <TbMobiledata />,
         title: "Buy Data",
-        link: '/fund-wallet'
+        link: '/buy-data'
     },
     {
         img: <BsTelephone />,
@@ -128,7 +128,7 @@ const transactions = [
         <div className='absolute z-30 w-full -mt-2 text-white h-full flex flex-col justify-center pl-6'>
           <h3 className='text-sm text-gray-100'>Wallet Balance</h3>
           <div className='flex text-2xl items-center gap-1 font-bold'>
-            <h1>$5000.00</h1>
+            <h1>₦5000.00</h1>
             <IoEyeOutline />
           </div>
         </div>
