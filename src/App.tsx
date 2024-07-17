@@ -10,6 +10,7 @@ import BuyData from './components/home/buy-data'
 import BuyAirtime from './components/home/buy-airtime'
 import Successful from './components/home/successful'
 import Reciept from './components/home/reciept'
+import PayBills from './components/home/pay-bills'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/buy-data' element={<BuyData />}></Route>
         <Route path='/reciept' element={<Reciept />}></Route>
         <Route path='/buy-airtime' element={<BuyAirtime />}></Route>
+        <Route path='/pay-bills' element={<PayBills />}></Route>
       </Routes>
     </Router>
   )

@@ -63,12 +63,12 @@ function buyData() {
 
         <div className='flex flex-col gap-5'>
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-                <input type="text" className='bg-gray-100' placeholder='Select Network'/>
+                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Select Network'/>
                 <RiArrowDropDownLine className='text-3xl' />
             </div>
 
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-                <input type="text" className='bg-gray-100' placeholder='Phone Number'/>
+                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Phone Number'/>
                 <TiContacts className='text-3xl text-primary' />
             </div>
         </div>

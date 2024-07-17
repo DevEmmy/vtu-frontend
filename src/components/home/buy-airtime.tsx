@@ -3,6 +3,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { TiContacts } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import SelectNetwork from './select-network';
 import ConfirmPayment from './confirm-payment';
 import PinInput from './pin-input'
 
@@ -15,12 +16,19 @@ function buyAirtime() {
         
     } 
 
+    const [network, setNetwork] = React.useState('')
+
     const [pinInput, setPinInput] = React.useState(false)
     const togglePinInput = () =>{
         setPinInput(prev => !prev)
     } 
 
-    const [inputValue, setInputValue] = React.useState('');
+    const [isNetwork, setIsNetwork] = React.useState(false)
+    const toggleNetwork = () =>{
+        setIsNetwork(prev => !prev)
+    } 
+
+  const [inputValue, setInputValue] = React.useState('');
 
   const handleInputChange = (e: { target: { value: any; }; }) => {
     const value = e.target.value;
@@ -50,8 +58,8 @@ function buyAirtime() {
 
         <div className='flex flex-col gap-5'>
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-                <input type="text" className='bg-gray-100 focus:outline-none' placeholder='Select Network'/>
-                <RiArrowDropDownLine className='text-3xl' />
+                <input type="text" className='bg-gray-100 focus:outline-none' value={network}  placeholder='Select Network'/>
+                <RiArrowDropDownLine className='text-3xl' onClick={()=> toggleNetwork()}/>
             </div>
 
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
@@ -79,6 +87,8 @@ function buyAirtime() {
                 </div>
             ))}
         </div>
+
+        {isNetwork && <SelectNetwork networkValue={setNetwork} setIsNetwork={setIsNetwork}/>}
         {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput}/>}
 
         {pinInput && <PinInput setPinInput={togglePinInput}/>}

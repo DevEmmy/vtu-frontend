@@ -12,12 +12,12 @@ function bulkSms() {
         <h1 className='text-xl font-bold'>Bulk SMS</h1>
         <form action="" className='flex flex-col gap-8'>
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-              <input type="text" placeholder='Phone Number' className='bg-gray-100'/>  
+              <input type="text" placeholder='Phone Number' className='bg-gray-100 focus:outline-none py-1'/>  
               <TiContacts className='text-2xl text-primary' />
             </div>
 
             <div className='border-b-2 pb-3'>
-                <input type="text" className='w-full' placeholder='Type your message here'/>
+                <textarea className='w-full focus:outline-none' placeholder='Type your message here'/>
             </div>
 
             <Link to={'/successful'} className='text-white text-center font-semibold bg-primary py-3 rounded-3xl'>Confirm</Link>

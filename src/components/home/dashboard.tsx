@@ -37,7 +37,7 @@ function dashboard() {
     {
         img: <IoReceiptOutline />,
         title: "Pay Bills",
-        link: '/fund-wallet'
+        link: '/pay-bills'
     }
 ];
 
