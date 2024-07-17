@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import img1 from '../../../public/security1.png'
 import { RiArrowLeftLine } from 'react-icons/ri'
 import { HiOutlineBackspace } from "react-icons/hi2";
