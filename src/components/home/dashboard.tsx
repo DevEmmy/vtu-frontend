@@ -50,7 +50,7 @@ const service = [
   {
       img: <TbMobiledata />,
       title: "Smile Data",
-        link: '/fund-wallet'
+        link: '/smile-data'
   },
   {
       img: <HiOutlinePrinter />,
@@ -153,7 +153,7 @@ const transactions = [
       <div className='w-full flex flex-col gap-4'>
         <div className='flex justify-between '>
           <h1 className='font-bold '>Services</h1>
-          <a href="##" className='text-xs text-primary'>See More</a>
+          <Link to={'/services'} className='text-xs text-primary'>See More</Link>
         </div>
         <div className='flex justify-between'>
           {service.map((item, index) =>(
@@ -172,7 +172,7 @@ const transactions = [
       <div className='w-full flex flex-col gap-4'>
         <div className='flex justify-between '>
           <h1 className='font-bold '>Transactions</h1>
-          <a href="##" className='text-xs text-primary'>View all</a>
+          <Link to={'/transactions'} className='text-xs text-primary'>View all</Link>
         </div>
         <div className='flex flex-col gap-2 py-3 w-full'>
           {transactions.map((item, index) =>(
@@ -193,7 +193,7 @@ const transactions = [
       
 
     </div>
-    <Nav />
+    <Nav dashboard={true} transaction={false} profile={false} settings={false}/>
     </div>
   )
 }

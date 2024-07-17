@@ -11,6 +11,9 @@ import BuyAirtime from './components/home/buy-airtime'
 import Successful from './components/home/successful'
 import Reciept from './components/home/reciept'
 import PayBills from './components/home/pay-bills'
+import SmileData from './components/home/smile-data'
+import Services from './components/home/services'
+import Transactions from './components/home/transactions'
 
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
         <Route path='/reciept' element={<Reciept />}></Route>
         <Route path='/buy-airtime' element={<BuyAirtime />}></Route>
         <Route path='/pay-bills' element={<PayBills />}></Route>
+        <Route path='/smile-data' element={<SmileData />}></Route>
+        <Route path='/services' element={<Services />}></Route>
+        <Route path='/transactions' element={<Transactions />}></Route>
       </Routes>
     </Router>
   )
