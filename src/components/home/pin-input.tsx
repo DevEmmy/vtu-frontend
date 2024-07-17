@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import React from "react";
 import { HiOutlineBackspace } from 'react-icons/hi';
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ interface ConfirmPaymentProps {
 
 const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput }) =>{
     const [password, setPassword] = React.useState('');
-    const [isTrue, setIsTrue] = React.useState(false)
+    // const [isTrue, setIsTrue] = React.useState(false)
 
     const navigate = useNavigate()
 

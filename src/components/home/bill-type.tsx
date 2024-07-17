@@ -1,5 +1,6 @@
-import { MdOutlineRadioButtonUnchecked, MdOutlineRadioButtonChecked } from "react-icons/md";
 import React from "react";
+import { MdOutlineRadioButtonUnchecked, MdOutlineRadioButtonChecked } from "react-icons/md";
+
 
 type BillType = 'Electricity' | 'Water' | 'Rent';
 
