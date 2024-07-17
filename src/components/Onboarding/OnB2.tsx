@@ -6,7 +6,7 @@ interface Props{
 
 const OnB2 = ({next}: Props) => {
     return (
-        <div className='h-[100vh] flex flex-col '>
+        <div className='pb-3 flex flex-col '>
         <img src="./ob2.png" className='w-full mx-auto object-contain' alt="" />
 
         <div className="steps">
