@@ -3,7 +3,7 @@ import { RiArrowLeftLine, RiLockPasswordFill, RiUser2Fill } from 'react-icons/ri
 import { Link } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { SiFacebook } from "react-icons/si";
+import { SiFacebook } from "react-icons/si"
 
 {/* <div className='p-3'>
             <RiArrowLeftLine className='text-black'/>
