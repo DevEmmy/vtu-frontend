@@ -1,4 +1,4 @@
-import React from 'react';
+;
 import check from '../../../public/green check.png'
 import { FiUpload } from "react-icons/fi";
 import { MdOutlineFileDownload } from "react-icons/md";

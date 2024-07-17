@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { RiArrowLeftLine, RiLockPasswordFill, RiUser2Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";

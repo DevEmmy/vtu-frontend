@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom';
 import { HiOutlineBackspace } from 'react-icons/hi';
 import { IoMdClose } from "react-icons/io";

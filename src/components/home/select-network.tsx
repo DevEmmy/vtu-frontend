@@ -1,4 +1,4 @@
-import React from 'react'
+
 import airtel from '../../../public/Airtel.png'
 import mtn from '../../../public/MTN.png'
 import mobile9 from '../../../public/9Mobile.png'

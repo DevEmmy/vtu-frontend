@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoCopyOutline } from "react-icons/io5";
 import { GoShareAndroid } from "react-icons/go";
