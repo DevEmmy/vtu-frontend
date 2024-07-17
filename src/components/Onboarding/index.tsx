@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import SplashScreen from './SplashScreen';
 import OnB1 from './OnB1';
 import OnB2 from './OnB2';
