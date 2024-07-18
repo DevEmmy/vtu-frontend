@@ -16,6 +16,10 @@ import Services from './components/home/services'
 import Transactions from './components/home/transactions'
 import Profile from './components/home/profile'
 import ProfileEdit from './components/home/profile-edit'
+import Settings from './components/home/settings/settings'
+import AccountSettings from './components/home/settings/account-settings'
+import NotificationSettings from './components/home/settings/notification-settings'
+import PrivacySettings from './components/home/settings/privacy-settings'
 
 
 function App() {
@@ -40,6 +44,11 @@ function App() {
         <Route path='/transactions' element={<Transactions />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
         <Route path='/profile-edit' element={<ProfileEdit />}></Route>
+        <Route path='/settings' element={<Settings />}></Route>
+        <Route path='/account-settings' element={<AccountSettings />}></Route>
+        <Route path='/notification-settings' element={<NotificationSettings />}></Route>
+        <Route path='/privacy-settings' element={<PrivacySettings />}></Route>
+
       </Routes>
     </Router>
   )

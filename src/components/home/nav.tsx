@@ -36,7 +36,7 @@ const nav: React.FC<Prop> = ({ transaction, dashboard, profile, settings }) =>  
         {
             img: <IoSettingsOutline />,
             title: "Settings",
-            link: '/fund-wallet',
+            link: '/settings',
             color: settings ? 'text-primary' : 'text-gray-400'
         }
       ];
