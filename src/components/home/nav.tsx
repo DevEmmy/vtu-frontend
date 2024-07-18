@@ -30,7 +30,7 @@ const nav: React.FC<Prop> = ({ transaction, dashboard, profile, settings }) =>  
         {
             img: <FaRegUser />,
             title: "Profile",
-            link: '/fund-wallet',
+            link: '/profile',
             color: profile ? 'text-primary' : 'text-gray-400'
         },
         {

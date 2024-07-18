@@ -14,6 +14,8 @@ import PayBills from './components/home/pay-bills'
 import SmileData from './components/home/smile-data'
 import Services from './components/home/services'
 import Transactions from './components/home/transactions'
+import Profile from './components/home/profile'
+import ProfileEdit from './components/home/profile-edit'
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
         <Route path='/smile-data' element={<SmileData />}></Route>
         <Route path='/services' element={<Services />}></Route>
         <Route path='/transactions' element={<Transactions />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/profile-edit' element={<ProfileEdit />}></Route>
       </Routes>
     </Router>
   )

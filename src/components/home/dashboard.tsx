@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import Nav from './nav'
-import userImg from '../../../public/Ellipse 90.png'
+import userImg from '../../../public/Ellipse 97.png'
 import { GoBell } from "react-icons/go";
 import { IoEyeOutline, IoWalletOutline, IoReceiptOutline, IoChatbubblesOutline } from "react-icons/io5";
 import { TbMobiledata } from "react-icons/tb";
