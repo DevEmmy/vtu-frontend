@@ -10,7 +10,7 @@ function accountSettings() {
         {
             icon: <IoMdLock />,
             title: 'Change Password',
-            link: ''
+            link: '/change-password'
         },
         {
             icon: <FaRegCreditCard />,

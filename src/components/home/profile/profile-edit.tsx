@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaArrowLeftLong } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
-import userImg from '../../../public/Ellipse 97.png'
+import userImg from '../../../../public/Ellipse 97.png'
 import { IoCameraOutline } from "react-icons/io5";
 
 type ProfileTitle = 'userName' | 'email' | 'phone'| 'address'

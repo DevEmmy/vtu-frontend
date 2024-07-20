@@ -1,9 +1,9 @@
 import React from 'react'
-import curve from '../../../public/Rectangle 49.png'
-import Nav from './nav'
+import curve from '../../../../public/Rectangle 49.png'
+import Nav from '../nav'
 import { Link } from 'react-router-dom'
 import { FaArrowLeftLong } from 'react-icons/fa6'
-import userImg from '../../../public/Ellipse 97.png'
+import userImg from '../../../../public/Ellipse 97.png'
 import { TbUserEdit } from "react-icons/tb";
 
 type ProfileTitle = 'userName' | 'email' | 'phone'| 'address'

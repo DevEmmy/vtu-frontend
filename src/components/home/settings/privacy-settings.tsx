@@ -32,7 +32,7 @@ function notificationSettings() {
     ]
   return (
     <div className='relative px-3 py-5 flex flex-col gap-7 min-h-screen'>
-      <Link to={"/settings"} className='text-xl'>
+        <Link to={"/settings"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
 

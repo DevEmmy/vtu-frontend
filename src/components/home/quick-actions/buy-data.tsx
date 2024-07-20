@@ -1,20 +1,23 @@
-import React from 'react'
+import React from "react";
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
-import ConfirmPayment from './confirm-payment';
-import PinInput from './pin-input'
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { TiContacts } from "react-icons/ti";
+import ConfirmPayment from '../confirm-payment';
+import PinInput from '../pin-input'
 
-function smileData() {
 
-    const [confirm, setConfirm] = React.useState(false)
-    const toggleConfirm = () =>{
-      setConfirm(prev => !prev)
-    } 
-  
-    const [pinInput, setPinInput] = React.useState(false)
-    const togglePinInput = () =>{
-      setPinInput(prev => !prev)
-    } 
+function buyData() {
+
+  const [confirm, setConfirm] = React.useState(false)
+  const toggleConfirm = () =>{
+    setConfirm(prev => !prev)
+  } 
+
+  const [pinInput, setPinInput] = React.useState(false)
+  const togglePinInput = () =>{
+    setPinInput(prev => !prev)
+  } 
 
     const offers = ['Best Offers', 'General', 'Social', 'Voice' , 'HyNetFlex']
     const bestOffers = [
@@ -49,17 +52,24 @@ function smileData() {
           timeSpan: "Valid for 60 days"
         }
       ];
+      
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
         <Link to={"/home"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Smile Data</h1>
+        <h1 className='text-xl font-bold'>Buy Data</h1>
 
         <div className='flex flex-col gap-5'>
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Smile Account Number'/>
+                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Select Network'/>
+                <RiArrowDropDownLine className='text-3xl' />
+            </div>
+
+            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
+                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Phone Number'/>
+                <TiContacts className='text-3xl text-primary' />
             </div>
         </div>
 
@@ -85,9 +95,9 @@ function smileData() {
         {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput}/>}
 
         {pinInput && <PinInput setPinInput={togglePinInput}/>}
-      
+        
     </div>
   )
 }
 
-export default smileData
+export default buyData

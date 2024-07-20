@@ -33,12 +33,12 @@ function services() {
         {
             img: <IoSchoolOutline /> ,
             title: "Educational Pin",
-              link: '/fund-wallet'
+              link: '/educational-pins'
         },
         {
             img: <PiTelevisionSimpleBold />,
             title: "TV Subscription",
-              link: '/fund-wallet'
+              link: '/tv-subscription'
         },
         {
             img: <SiHostinger />,

@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import ConfirmPayment from './confirm-payment';
-import PinInput from './pin-input'
-import BillType from './bill-type'
+import ConfirmPayment from '../confirm-payment';
+import PinInput from '../pin-input'
+import BillType from '../bill-type'
+import ElectricityItem from "../electricity-items";
 
 function payBills() {
     const [confirm, setConfirm] = React.useState(false)
@@ -15,7 +16,12 @@ function payBills() {
         
     } 
 
-    const [billType, setBillType] = React.useState('')
+    const [isElectricity, setIsElectricity] = React.useState(false)
+    const toggleElectricity = () =>{
+        setIsElectricity(prev => !prev)
+    } 
+
+    
     const [pinInput, setPinInput] = React.useState(false)
     const togglePinInput = () =>{
         setPinInput(prev => !prev)
@@ -39,19 +45,19 @@ function payBills() {
     const isValidInput = inputValue !== '' && /^\d+$/.test(inputValue);
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
-      <Link to={"/home"} className='text-xl'>
+        <Link to={"/home"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Buy Airtime</h1>
+        <h1 className='text-xl font-bold'>Pay Bills</h1>
 
         <div className='flex flex-col gap-5'>
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Bill type' value={billType}/>
+                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Bill type' />
                 <RiArrowDropDownLine onClick={()=> toggleNetwork()} className='text-3xl' />
             </div>
 
-            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
+            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3' onClick={()=> toggleElectricity()}>
                 <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Biller'/>
                 <RiArrowDropDownLine className='text-3xl' />
             </div>
@@ -71,8 +77,9 @@ function payBills() {
                     Pay
                 </button>
             </div>
+            {isElectricity && <ElectricityItem />}
 
-            {isBillType && <BillType billValue={setBillType} setIsBillType={setIsBillType}/>}
+            {isBillType && <BillType />}
         {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput}/>}
 
         {pinInput && <PinInput setPinInput={togglePinInput}/>}
