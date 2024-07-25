@@ -1,4 +1,3 @@
-import React from 'react'
 import { HiOutlinePrinter } from 'react-icons/hi2';
 import { IoChatbubblesOutline, IoSchoolOutline } from 'react-icons/io5';
 import { RiExchangeDollarFill } from 'react-icons/ri';

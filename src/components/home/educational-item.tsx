@@ -12,7 +12,7 @@ import { MdOutlineRadioButtonUnchecked, MdOutlineRadioButtonChecked } from "reac
       }
     
 
-const educationalItems: React.FC<FunctionProp>  = ({setPaymentItem}) =>  {
+const educationalItems: React.FC<FunctionProp>  = ({}) =>  {
     
     const [educationalItems, seteducationalItems] = React.useState<ItemState>(  {
         WAEC : false,

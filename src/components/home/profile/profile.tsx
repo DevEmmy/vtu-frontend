@@ -12,7 +12,7 @@ function profile() {
 
     const profileTitle = ['Username' , 'Email' , 'Phone Number', 'Address']
 
-    const [profile, setProfile] = React.useState({
+    const [profile] = React.useState({
         userName: 'Aisha',
         email: '123aisha@gmail.com',
         phone: '07076533245',
