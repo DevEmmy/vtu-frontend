@@ -3,9 +3,9 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { TiContacts } from "react-icons/ti";
 import { Link } from 'react-router-dom';
-import SelectNetwork from './select-network';
-import ConfirmPayment from './confirm-payment';
-import PinInput from './pin-input'
+import SelectNetwork from '../select-network';
+import ConfirmPayment from '../confirm-payment';
+import PinInput from '../pin-input'
 
 
 function buyAirtime() {

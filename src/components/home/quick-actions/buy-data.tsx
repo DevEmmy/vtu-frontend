@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { TiContacts } from "react-icons/ti";
-import ConfirmPayment from './confirm-payment';
-import PinInput from './pin-input'
+import ConfirmPayment from '../confirm-payment';
+import PinInput from '../pin-input'
 
 
 function buyData() {
