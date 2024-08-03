@@ -41,7 +41,7 @@ const nav: React.FC<Prop> = ({ transaction, dashboard, profile, settings }) =>  
         }
       ];
   return (
-    <div className='py-6 px-4 flex justify-between bg-white max-w-[425px] w-full fixed bottom-0 z-20'>
+    <div className='py-6 px-4 flex justify-between bg-white  w-full fixed bottom-0 z-20'>
       
         {nav.map((item, index)=>(
             <Link to={item.link} key={index} className={`w-20 text-2xl ${item.color} flex flex-col items-center`}>

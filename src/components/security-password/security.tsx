@@ -4,6 +4,7 @@ import { RiArrowLeftLine } from 'react-icons/ri'
 import { HiOutlineBackspace } from "react-icons/hi2";
 import check from "../../../public/CHECK.png"
 import { Link } from 'react-router-dom';
+import { useCreatePin } from '../../hooks/Auth';
 
 
 const PasswordInputScreen = () => {
@@ -20,12 +21,15 @@ const PasswordInputScreen = () => {
     setPassword(password.slice(0, -1));
   };
 
+  const {success, isLoading, createPinFn} = useCreatePin()
 
   const handleSubmit = () => {
     if (password.length === 4) {
       setPassword(password)
       setIsTrue(true)
     }
+
+    createPinFn({pin: password});
   };
 
   return (
@@ -34,7 +38,7 @@ const PasswordInputScreen = () => {
         <RiArrowLeftLine />
         <div>
         <h2 className="text-3xl font-bold">Security</h2>
-        <p className="">Create a password to secure your account</p>
+        <p className="">Create a Pin to secure your account</p>
         </div>
         
         <div className='w-[100%] flex justify-center'>
@@ -71,7 +75,7 @@ const PasswordInputScreen = () => {
         </button>
 
         <button className='w-full h-12 text-xl flex justify-center' onClick={handleBackspace}>
-         <HiOutlineBackspace className='mt-3'/>   
+         <HiOutlineBackspace className='mt-3' size={30}/>   
         </button>
 
         
@@ -81,17 +85,23 @@ const PasswordInputScreen = () => {
         onClick={handleSubmit}
         className="w-full py-2 bg-blue-500 text-white rounded-lg"
         >
-        Set Password
+        {
+          isLoading
+          ?
+          "Setting..."
+          :
+          "Set Pin"
+        }
         </button>
 
-        {isTrue && 
+        {success && 
         <div className='absolute top-0 left-0 w-[100%] h-full z-10 flex flex-col justify-end bg-[rgba(0,0,0,0.4)]'>
             <div className=' bg-white py-20 px-3 rounded-t-2xl flex items-center flex-col gap-7'>
           <img src={check} alt="" />
           <h1 className='font-semibold text-xl'>Successful</h1>
           <p className='text-sm text-gray-500'>You have successfully set up a password</p>
           <Link to={"/home"} className='w-full'>
-              <button className='font-bold text-white bg-primary w-full py-2 rounded-3xl'>Get Started</button>
+              <button className='font-bold text-white bg-primary w-full py-4 rounded-3xl'>Get Started</button>
           </Link>
           
         </div>

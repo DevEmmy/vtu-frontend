@@ -25,7 +25,7 @@ const OnB3 = () => {
                     </button>
                 </Link>
 
-                <Link to={"/new-account"}>
+                <Link to={"/new-account"} className='w-full'>
                     <button className='border border-primary text-primary font-semibold py-3 px-10 w-full rounded-full'>
                         Sign up
                     </button>
