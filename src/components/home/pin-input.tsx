@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 interface ConfirmPaymentProps {
   setPinInput: Function;
+  action: Function;
 }
 
-const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput }) =>{
+const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput, action }) =>{
     const [password, setPassword] = React.useState('');
     // const [isTrue, setIsTrue] = React.useState(false)
 
@@ -27,9 +28,11 @@ const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput }) =>{
 
 
   const handleSubmit = () => {
+    setPinInput()
     if (password.length === 4) {
       setPassword(password)
-      navigate('/successful')
+      action(password)
+      // navigate('/successful')
     }
   };
   return (

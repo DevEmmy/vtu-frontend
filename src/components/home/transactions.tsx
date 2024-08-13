@@ -7,58 +7,61 @@ import img2 from '../../../public/trans2.png'
 import img3 from '../../../public/trans3.png'
 import img4 from '../../../public/trans4.png'
 import Nav from './nav'
+import { useAllTransactions } from '../../hooks/MakePayments';
 
 
 
 
 function transactions() {
 
-  const transactions = [
-    {
-      img: img1,
-      title: "Top up Airtime",
-      date: "June 20 2024",
-      time: "10:00 AM",
-      price: '-50.00'
-    },
-    {
-      img: img4,
-      title: "Funded Wallet",
-      date: "June 20 2024",
-      time: "02:00 PM",
-      price: '+20000.00'
-    },
-    {
-      img: img2,
-      title: "Pay Bills",
-      date: "June 20 2024",
-      time: "11:00 AM",
-      price: '-2000.00'
-    },
-    {
-      img: img3,
-      title: "Smile Data",
-      date: "June 20 2024",
-      time: "03:00 PM",
-      price: '-200.00'
-    },
-    {
-      img: img4,
-      title: "Buy Data",
-      date: "June 20 2024",
-      time: "01:00 PM",
-      price: '-500.00'
-    }
-  ]
+  const { transactions } = useAllTransactions()
 
-  
+  // const transactions = [
+  //   {
+  //     img: img1,
+  //     title: "Top up Airtime",
+  //     date: "June 20 2024",
+  //     time: "10:00 AM",
+  //     price: '-50.00'
+  //   },
+  //   {
+  //     img: img4,
+  //     title: "Funded Wallet",
+  //     date: "June 20 2024",
+  //     time: "02:00 PM",
+  //     price: '+20000.00'
+  //   },
+  //   {
+  //     img: img2,
+  //     title: "Pay Bills",
+  //     date: "June 20 2024",
+  //     time: "11:00 AM",
+  //     price: '-2000.00'
+  //   },
+  //   {
+  //     img: img3,
+  //     title: "Smile Data",
+  //     date: "June 20 2024",
+  //     time: "03:00 PM",
+  //     price: '-200.00'
+  //   },
+  //   {
+  //     img: img4,
+  //     title: "Buy Data",
+  //     date: "June 20 2024",
+  //     time: "01:00 PM",
+  //     price: '-500.00'
+  //   }
+  // ]
+
+
   return (
     <>
-    
-    
-    <div className='px-3 py-5 flex flex-col gap-7 min-h-screen'>
-      <Link to={"/home"} className='text-xl'>
-            <FaArrowLeftLong />
+
+
+      <div className='px-3 py-5 flex flex-col gap-7 min-h-screen'>
+        <Link to={"/home"} className='text-xl'>
+          <FaArrowLeftLong />
         </Link>
 
         <h1 className='text-xl font-bold'>Transactions</h1>
@@ -80,21 +83,23 @@ function transactions() {
         </div>
 
         <div className='flex flex-col gap-5 py-1 w-full'>
-          {transactions.map((item, index) =>(
-            <div className='flex w-full items-center' key={index}>
-              <img src={item.img} alt=""/>
-              <div className='flex flex-col ml-2'>
-                <h1 className='font-semibold'>{item.title}</h1>
-                <p className='text-xs text-gray-400'>{item.date},{item.time}</p>
+          {transactions?.map((item: any, index: number) => (
+            <Link to={`/reciept/${item._id}`}>
+              <div className='flex w-full items-center' key={index}>
+                <img src={img1} alt="" />
+                <div className='flex flex-col ml-2'>
+                  <h1 className='font-semibold'>{item.type}</h1>
+                  <p className='text-xs text-gray-400'>{item.createdAt},{item.time}</p>
+                </div>
+                <h2 className='ml-auto font-bold'>N{item.amount}</h2>
               </div>
-              <h2 className='ml-auto font-bold'>{item.price}</h2>
-            </div>
+            </Link>
           ))}
         </div>
-      
-    </div>
-    <Nav transaction={true} dashboard={false}  profile={false} settings={false}/>
-    
+
+      </div>
+      <Nav transaction={true} dashboard={false} profile={false} settings={false} />
+
     </>
   )
 }

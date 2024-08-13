@@ -41,10 +41,6 @@ export const useLogin = () => {
 
     }
 
-    useEffect(() => {
-
-    }, [])
-
     return { isError, isLoading, response, loginFn }
 }
 
@@ -87,7 +83,17 @@ export const useSignUp = () => {
 }
 
 export const useUser = ()=>{
-    const user = JSON.parse(localStorage.getItem("user") as string)
+    let [user, setUser] = useState(JSON.parse(localStorage.getItem("user") as string))
+
+    const fetchUser = async ()=>{
+        let response = await axiosConfig.get("/auth/my-details");
+        localStorage.setItem("user", JSON.stringify(response.data.payload))
+        setUser(response.data.payload);
+    }
+    
+    useEffect(()=>{
+        fetchUser()
+    }, [])
 
     return {user}
 }

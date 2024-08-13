@@ -15,6 +15,7 @@ import img2 from '../../../public/trans2.png'
 import img3 from '../../../public/trans3.png'
 import img4 from '../../../public/trans4.png'
 import { useUser } from '../../hooks/Auth';
+import { useAllTransactions } from '../../hooks/MakePayments';
 
 function dashboard() {
   // const user = "Aisha"
@@ -67,45 +68,47 @@ function dashboard() {
 
 
 
-  const transactions = [
-    {
-      img: img1,
-      title: "Top up Airtime",
-      date: "June 20 2024",
-      time: "10:00 AM",
-      price: '-50.00'
-    },
-    {
-      img: img4,
-      title: "Funded Wallet",
-      date: "June 20 2024",
-      time: "02:00 PM",
-      price: '+20000.00'
-    },
-    {
-      img: img2,
-      title: "Pay Bills",
-      date: "June 20 2024",
-      time: "11:00 AM",
-      price: '-2000.00'
-    },
-    {
-      img: img3,
-      title: "Smile Data",
-      date: "June 20 2024",
-      time: "03:00 PM",
-      price: '-200.00'
-    },
-    {
-      img: img4,
-      title: "Buy Data",
-      date: "June 20 2024",
-      time: "01:00 PM",
-      price: '-500.00'
-    }
-  ]
+  // const transactions = [
+  //   {
+  //     img: img1,
+  //     title: "Top up Airtime",
+  //     date: "June 20 2024",
+  //     time: "10:00 AM",
+  //     price: '-50.00'
+  //   },
+  //   {
+  //     img: img4,
+  //     title: "Funded Wallet",
+  //     date: "June 20 2024",
+  //     time: "02:00 PM",
+  //     price: '+20000.00'
+  //   },
+  //   {
+  //     img: img2,
+  //     title: "Pay Bills",
+  //     date: "June 20 2024",
+  //     time: "11:00 AM",
+  //     price: '-2000.00'
+  //   },
+  //   {
+  //     img: img3,
+  //     title: "Smile Data",
+  //     date: "June 20 2024",
+  //     time: "03:00 PM",
+  //     price: '-200.00'
+  //   },
+  //   {
+  //     img: img4,
+  //     title: "Buy Data",
+  //     date: "June 20 2024",
+  //     time: "01:00 PM",
+  //     price: '-500.00'
+  //   }
+  // ]
 
-  const {user} = useUser()
+  const { transactions } = useAllTransactions()
+  console.log(transactions)
+  const { user } = useUser()
 
 
   return (
@@ -113,7 +116,7 @@ function dashboard() {
       <div className='flex flex-col items-center gap-5 p-3 relative pb-[100px]'>
         <div className='flex w-full pt-3 items-center'>
           <div className='mr-2'>
-            <img src={"https://static.vecteezy.com/system/resources/previews/026/966/960/original/default-avatar-profile-icon-of-social-media-user-vector.jpg"} alt=""  className='w-[60px] h-[60px] rounded-full object-cover'/>
+            <img src={"https://static.vecteezy.com/system/resources/previews/026/966/960/original/default-avatar-profile-icon-of-social-media-user-vector.jpg"} alt="" className='w-[60px] h-[60px] rounded-full object-cover' />
           </div>
           <div>
             <h1 className='font-semibold '>Hi, {user.firstName}</h1>
@@ -177,15 +180,18 @@ function dashboard() {
             <Link to={'/transactions'} className='text-xs text-primary'>View all</Link>
           </div>
           <div className='flex flex-col gap-2 py-3 w-full'>
-            {transactions.map((item, index) => (
-              <div className='flex w-full items-center' key={index}>
-                <img src={item.img} alt="" />
-                <div className='flex flex-col ml-2'>
-                  <h1 className='font-semibold'>{item.title}</h1>
-                  <p className='text-xs text-gray-400'>{item.date},{item.time}</p>
+
+            {transactions?.map((item: any, index: number) => (
+              <Link to={`/reciept/${item._id}`}>
+                <div className='flex w-full items-center' key={index}>
+                  <img src={img1} alt="" />
+                  <div className='flex flex-col ml-2'>
+                    <h1 className='font-semibold'>{item.type}</h1>
+                    <p className='text-xs text-gray-400'>{item.createdAt},{item.time}</p>
+                  </div>
+                  <h2 className='ml-auto font-bold'>N{item.amount}</h2>
                 </div>
-                <h2 className='ml-auto font-bold'>{item.price}</h2>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

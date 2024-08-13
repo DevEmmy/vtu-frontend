@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import SelectNetwork from '../select-network';
 import ConfirmPayment from '../confirm-payment';
 import PinInput from '../pin-input'
+import { usePurchaseAirtime } from "../../../hooks/MakePayments";
 
 
 function buyAirtime() {
@@ -16,7 +17,7 @@ function buyAirtime() {
         }
     }
 
-    const [network, setNetwork] = React.useState('')
+    const [network, setNetwork] = React.useState("mtn")
     const [phone, setPhone] = useState("")
 
     const [pinInput, setPinInput] = React.useState(false)
@@ -68,6 +69,24 @@ function buyAirtime() {
             value: "etisalat"
         }
     ]
+
+    const {purchaseAirtime, isLoading, isError} = usePurchaseAirtime()
+
+    const submit = (pin: string)=>{
+        let data = {
+            transaction: {
+                amount: inputValue,
+                type: "AIRTIME",
+                details: {
+                    phone,
+                    network
+                }
+            },
+            pin
+        }
+
+        purchaseAirtime(data)
+    }
     return (
         <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
             <Link to={"/home"} className='text-xl'>
@@ -107,7 +126,7 @@ function buyAirtime() {
             
             {confirm && <ConfirmPayment setConfirm={toggleConfirm} network={network} amount={inputValue} phone={phone} setPinInput={togglePinInput} />}
 
-            {pinInput && <PinInput setPinInput={togglePinInput} />}
+            {pinInput && <PinInput action={submit} setPinInput={togglePinInput} />}
         </div>
     )
 }

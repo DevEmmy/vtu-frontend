@@ -38,7 +38,7 @@ function App() {
         <Route path='/bulk-sms' element={<BulkSMS />}></Route>
         <Route path='/successful' element={<Successful />}></Route>
         <Route path='/buy-data' element={<BuyData />}></Route>
-        <Route path='/reciept' element={<Reciept />}></Route>
+        <Route path='/reciept/:transactionId' element={<Reciept />}></Route>
         <Route path='/buy-airtime' element={<BuyAirtime />}></Route>
         <Route path='/pay-bills' element={<PayBills />}></Route>
         <Route path='/smile-data' element={<SmileData />}></Route>

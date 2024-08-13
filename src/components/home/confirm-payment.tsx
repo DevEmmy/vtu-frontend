@@ -38,7 +38,7 @@ const confirmPayment: React.FC<ConfirmPaymentProps> = ({ setConfirm, setPinInput
             <img src={check} alt="" className='w-[30px] ml-auto'/>
           </div> */}
 
-          <button className='bg-primary text-white py-4 rounded-3xl font-semibold' onClick={()=>{setConfirm(); setPinInput()}}>
+          <button className='bg-primary text-white py-4 rounded-3xl font-semibold' onClick={()=>{setConfirm(); setPinInput();}}>
             Confirm
           </button>
       </div>
