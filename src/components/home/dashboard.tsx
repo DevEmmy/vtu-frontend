@@ -16,6 +16,7 @@ import img3 from '../../../public/trans3.png'
 import img4 from '../../../public/trans4.png'
 import { useUser } from '../../hooks/Auth';
 import { useAllTransactions } from '../../hooks/MakePayments';
+import Each from '../Transaction/Each';
 
 function dashboard() {
   // const user = "Aisha"
@@ -107,7 +108,6 @@ function dashboard() {
   // ]
 
   const { transactions } = useAllTransactions()
-  console.log(transactions)
   const { user } = useUser()
 
 
@@ -182,16 +182,7 @@ function dashboard() {
           <div className='flex flex-col gap-2 py-3 w-full'>
 
             {transactions?.map((item: any, index: number) => (
-              <Link to={`/reciept/${item._id}`}>
-                <div className='flex w-full items-center' key={index}>
-                  <img src={img1} alt="" />
-                  <div className='flex flex-col ml-2'>
-                    <h1 className='font-semibold'>{item.type}</h1>
-                    <p className='text-xs text-gray-400'>{item.createdAt},{item.time}</p>
-                  </div>
-                  <h2 className='ml-auto font-bold'>N{item.amount}</h2>
-                </div>
-              </Link>
+              <Each item={item} key={index}/>
             ))}
           </div>
         </div>

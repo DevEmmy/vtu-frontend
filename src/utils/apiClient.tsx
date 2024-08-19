@@ -5,7 +5,7 @@ const getToken = ()=>{
 }
 
 export const axiosConfig = axios.create({
-    baseURL: "http://localhost:3030",
+    baseURL: "http://192.168.83.168:3030",
     headers: {
         "Authorization": `Bearer ${getToken()}`
     }

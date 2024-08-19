@@ -3,11 +3,12 @@ import React from "react";
 import { HiOutlineBackspace } from 'react-icons/hi';
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import Loader from "../Loader";
 
 
 interface ConfirmPaymentProps {
-  setPinInput: Function;
-  action: Function;
+  setPinInput?: Function | null;
+  action?: Function | null;
 }
 
 const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput, action }) =>{

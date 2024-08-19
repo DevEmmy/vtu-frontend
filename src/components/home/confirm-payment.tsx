@@ -3,14 +3,14 @@ import { IoMdClose } from "react-icons/io";
 import check from '../../../public/CHECK.png'
 
 interface ConfirmPaymentProps {
-  setConfirm: Function;
-  setPinInput: Function;
+  setConfirm?: Function | null;
+  setPinInput?: Function | null;
   network: string,
   phone: string,
   amount: string
 }
 
-const confirmPayment: React.FC<ConfirmPaymentProps> = ({ setConfirm, setPinInput, network, phone, amount }) => {
+const confirmPayment: React.FC<any> = ({ setConfirm, setPinInput, network, phone, amount }) => {
   
   return (
     <div className='absolute top-0 w-full left-0 h-screen flex flex-col justify-end z-20  bg-[rgba(0,0,0,0.4)]'>

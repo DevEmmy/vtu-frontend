@@ -7,6 +7,7 @@ import SelectNetwork from '../select-network';
 import ConfirmPayment from '../confirm-payment';
 import PinInput from '../pin-input'
 import { usePurchaseAirtime } from "../../../hooks/MakePayments";
+import Loader from "../../Loader";
 
 
 function buyAirtime() {
@@ -65,8 +66,8 @@ function buyAirtime() {
             value: "glo"
         },
         {
-            title: "Etisalat",
-            value: "etisalat"
+            title: "9mobile",
+            value: "9mobile"
         }
     ]
 
@@ -127,6 +128,12 @@ function buyAirtime() {
             {confirm && <ConfirmPayment setConfirm={toggleConfirm} network={network} amount={inputValue} phone={phone} setPinInput={togglePinInput} />}
 
             {pinInput && <PinInput action={submit} setPinInput={togglePinInput} />}
+
+            {
+                isLoading
+                &&
+                <Loader />
+            }
         </div>
     )
 }
