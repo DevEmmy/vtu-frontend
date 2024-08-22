@@ -5,7 +5,7 @@ const getToken = ()=>{
 }
 
 export const axiosConfig = axios.create({
-    baseURL: "http://192.168.236.168:4030",
+    baseURL: "https://megapay-backend.onrender.com",
     headers: {
         "Authorization": `Bearer ${getToken()}`
     }
