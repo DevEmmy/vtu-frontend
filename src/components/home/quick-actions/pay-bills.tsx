@@ -5,7 +5,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import ConfirmPayment from '../confirm-payment';
 import PinInput from '../pin-input'
 import BillType from '../bill-type'
-import ElectricityItem from "../electricity-items";
+import { HiCheck } from "react-icons/hi2";
+
 
 function payBills() {
     const [confirm, setConfirm] = React.useState(false)
@@ -16,11 +17,33 @@ function payBills() {
         
     } 
 
-    const [isElectricity, setIsElectricity] = React.useState(false)
-    const toggleElectricity = () =>{
-        setIsElectricity(prev => !prev)
-    } 
+    
+    const [bill, setBill] = React.useState("phcn")
+    const electricityBills = [
+        {
+          title: "PHCN",
+          value: "phcn"
+        },
+        {
+          title: "EKEDP",
+          value: "ekedp"
+        },
+        {
+          title: "AEDC",
+          value: "aedc"
+        }
+      ]
 
+    
+      const priceOption = [
+        
+        { price: 1000 },
+        { price: 1500 },
+        { price: 2000 },
+        { price: 5000 },
+        { price: 1000 },
+    ]
+    const [priceSelected, setPriceSelected] = React.useState<number | null>()
     
     const [pinInput, setPinInput] = React.useState(false)
     const togglePinInput = () =>{
@@ -49,37 +72,55 @@ function payBills() {
             <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Pay Bills</h1>
+        <h1 className='text-xl font-bold'>Pay Electricity Bills</h1>
 
         <div className='flex flex-col gap-5'>
+
+            
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Bill type' />
-                <RiArrowDropDownLine onClick={()=> toggleNetwork()} className='text-3xl' />
+              <select className='bg-gray-100 w-full focus:outline-none' value={bill} onChange={(e) => {setBill(e.target.value)}}>
+                {
+                    electricityBills.map((n, i) => {
+                        return (
+                        <option value={n.value} key={i}>{n.title}</option>
+                        )
+                    })
+                    }
+              </select>
+                
             </div>
 
-            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3' onClick={()=> toggleElectricity()}>
-                <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Biller'/>
-                <RiArrowDropDownLine className='text-3xl' />
-            </div>
+            
 
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-               <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Payment Item'/>
-            </div>
-
-            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-               <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Meter Number/Account Number'/>
+               <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Meter Number'/>
             </div>
         </div>
         <div className='flex py-2 border-b-2 text-sm items-center'>
-                <h1 className='font-bold mr-2'>$</h1>
-                <input type="text" value={inputValue} onChange={handleInputChange} placeholder='Enter Amount' className='py-1 text-lg focus:outline-none'/>
-                <button onClick={() => toggleConfirm()} className={`${isValidInput ? 'opacity-100' : 'opacity-50 cursor-not-allowed'} px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}>
-                    Pay
-                </button>
-            </div>
-            {isElectricity && <ElectricityItem />}
+            <h1 className='font-bold mr-2'>$</h1>
+            <input type="text" value={inputValue} onChange={handleInputChange} placeholder='Enter Amount' className='py-1 text-lg focus:outline-none'/>
+            <button onClick={() => toggleConfirm()} className={`${isValidInput ? 'opacity-100' : 'opacity-50 cursor-not-allowed'} px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}>
+                Pay
+            </button>
+        </div>
 
-            {isBillType && <BillType />}
+        <div className='grid grid-cols-3 gap-4 '>
+        {priceOption.map((item: any, index: number) => (
+          <div key={index} onClick={()=> setPriceSelected(index)}  className={`relative flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg  ${ priceSelected === index ? "border-green-400 border-2": "border-primary"}`}>
+            {
+              index === priceSelected&&
+              <div className="absolute -top-3 -right-3  bg-green-600 text-white rounded-full p-1">
+                <HiCheck />
+              </div>
+            }
+            <h2>{item.price}</h2>
+          </div>
+        ))}
+      </div>
+      <button className="bg-primary rounded-lg p-4 text-white"onClick={() => toggleConfirm()}>Proceed to Payment</button>
+
+
+        
         {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput}/>}
 
         {pinInput && <PinInput setPinInput={togglePinInput}/>}

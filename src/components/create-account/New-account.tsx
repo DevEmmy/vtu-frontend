@@ -72,7 +72,7 @@ function NewAccount() {
           <RiUser2Fill />
           <input
             type='text'
-            placeholder='First Name'
+            placeholder='Last Name'
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
