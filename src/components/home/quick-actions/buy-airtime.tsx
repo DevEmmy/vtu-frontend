@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import SelectNetwork from '../select-network';
 import ConfirmPayment from '../confirm-payment';
 import PinInput from '../pin-input'
-import { usePurchaseAirtime } from "../../../hooks/MakePayments";
+import { useMakeTransaction } from "../../../hooks/MakePayments";
 import Loader from "../../Loader";
 
 
@@ -71,7 +71,7 @@ function buyAirtime() {
         }
     ]
 
-    const {purchaseAirtime, isLoading, isError} = usePurchaseAirtime()
+    const {makeTransaction, isLoading, isError} = useMakeTransaction()
 
     const submit = (pin: string)=>{
         let data = {
@@ -86,7 +86,7 @@ function buyAirtime() {
             pin
         }
 
-        purchaseAirtime(data)
+        makeTransaction(data)
     }
     return (
         <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>

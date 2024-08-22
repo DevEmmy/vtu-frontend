@@ -17,15 +17,18 @@ import img4 from '../../../public/trans4.png'
 import { useUser } from '../../hooks/Auth';
 import { useAllTransactions } from '../../hooks/MakePayments';
 import Each from '../Transaction/Each';
+import useMonnify from '../../hooks/useMonnify';
 
 function dashboard() {
-  // const user = "Aisha"
+  
+  
+ 
 
   const quickAction = [
     {
       img: <IoWalletOutline />,
       title: "Fund Wallet",
-      link: '/fund-wallet'
+	  link: "/fund-wallet"
     },
     {
       img: <TbMobiledata />,
@@ -144,14 +147,18 @@ function dashboard() {
             <h1 className='font-bold '>Quick Action</h1>
           </div>
           <div className='flex justify-between '>
-            {quickAction.map((item, index) => (
-              <Link to={item.link} key={index} className='flex flex-col items-center'>
+            {quickAction.map((item, index) =>{
+              return (
+               
+                <Link to={item.link} key={index} className='flex flex-col items-center'>
                 <div className='w-20 h-20 rounded-xl flex justify-center items-center text-2xl bg-pale text-primary hover:text-white  hover:bg-primary'>
                   {item.img}
                 </div>
                 <p className='text-xs'>{item.title}</p>
               </Link>
-            ))}
+             
+              )
+            } )}
           </div>
         </div>
 

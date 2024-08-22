@@ -168,3 +168,39 @@ export const useUpdateProfile = () => {
 
 
 
+export const useFundWallet = () => {
+
+    const [isError, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    const fundWalletFn = async (data: any) => {
+        try {
+            setIsLoading(true)
+            let response = await axiosConfig.patch("/auth/fund-wallet", data)
+            console.log(response)
+
+            if (response.status === 200) {
+                toastSuccess(response.data.message)
+                localStorage.setItem("user", JSON.stringify(response.data.payload))
+                setSuccess(true);
+            }
+            else {
+                toastError(response.data.message)
+            }
+            setIsLoading(false)
+            setError(true)
+        }
+        catch (err: any) {
+            setIsLoading(false)
+            setError(true)
+            toastError(err.response.data.message)
+        }
+    }
+
+    return { isError, isLoading, success, fundWalletFn }
+}
+
+
+
+

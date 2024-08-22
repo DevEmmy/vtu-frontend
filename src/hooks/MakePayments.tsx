@@ -7,16 +7,15 @@ import { toastError } from "../utils/toast";
 
 
 
-export const usePurchaseAirtime = () => {
+export const useMakeTransaction = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [response, setResponse] = useState();
 
     const navigate = useNavigate()
 
-    const purchaseAirtime = async (data: any) => {
+    const makeTransaction = async (data: any) => {
         setIsLoading(true)
-        data.transaction.type = "AIRTIME"
 
         try {
             let response = await axiosConfig.post("/transaction", data)
@@ -42,7 +41,7 @@ export const usePurchaseAirtime = () => {
         setIsLoading(false)
     }
 
-    return { purchaseAirtime, isLoading, isError }
+    return { makeTransaction, isLoading, isError }
 }
 
 export const useAllTransactions = () => {

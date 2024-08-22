@@ -6,6 +6,9 @@ import { TiContacts } from "react-icons/ti";
 import ConfirmPayment from '../confirm-payment';
 import PinInput from '../pin-input'
 import { dataPlans } from "../../../utils/dataPlans";
+import { HiCheck } from "react-icons/hi2";
+import { useMakeTransaction } from "../../../hooks/MakePayments";
+import Loader from "../../Loader";
 
 
 function buyData() {
@@ -74,6 +77,27 @@ function buyData() {
   ]
 
   const [network, setNetwork] = React.useState("mtn")
+  const [dataSelected, setDataSelected] = React.useState<number | null>()
+  const [phoneNumber, setPhoneNumber] = React.useState<number | null>()
+
+  const {makeTransaction, isLoading, isError} = useMakeTransaction()
+
+  const submit = (pin: string)=>{
+      let data = {
+          transaction: {
+              amount: dataPlans[network][dataSelected].price,
+              type: "DATA",
+              details: {
+                  phoneNumber: `0${phoneNumber}`,
+                  network,
+                  variationId: dataPlans[network][dataSelected].code
+              }
+          },
+          pin
+      }
+
+      makeTransaction(data)
+  }
 
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-3 min-h-screen`}>
@@ -85,7 +109,7 @@ function buyData() {
 
       <div className='flex flex-col gap-5'>
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-          <select className='bg-gray-100 w-full focus:outline-none' value={network} onChange={(e) => setNetwork(e.target.value)}>
+          <select className='bg-gray-100 w-full focus:outline-none' value={network} onChange={(e) => {setNetwork(e.target.value); setDataSelected(null)}}>
             {
               networks.map((n, i) => {
                 return (
@@ -98,7 +122,7 @@ function buyData() {
         </div>
 
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-          <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Phone Number' />
+          <input type="number" className='bg-gray-100 focus:outline-none py-1' placeholder='Phone Number' onChange={(e)=> setPhoneNumber(Number(e.target.value))}/>
           <TiContacts className='text-3xl text-primary' />
         </div>
       </div>
@@ -116,18 +140,30 @@ function buyData() {
 
       <div className='grid grid-cols-3 gap-4 '>
         {dataPlans[network].map((item: any, index: number) => (
-          <div key={index} onClick={() => toggleConfirm()} className='flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg border-primary'>
+          <div key={index} onClick={()=> setDataSelected(index)}  className={`relative flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg border-primary ${ dataSelected === index && "border-green-400 border-2"}`}>
+            {
+              index === dataSelected&&
+              <div className="absolute -top-3 -right-3  bg-green-600 text-white rounded-full p-1">
+                <HiCheck />
+              </div>
+            }
             <h1 className='font-bold '>{item.dataSize}</h1>
-            <p className='text-gray-500 text-sm'>{item.price}</p>
+            <p className='text-gray-500 text-sm'>₦{item.price}</p>
             <p className='text-[10px]'>{item.duration}</p>
           </div>
         ))}
       </div>
 
-      {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput} />}
+      <button className="bg-primary rounded-lg p-4 text-white"onClick={() => toggleConfirm()}>Proceed to Payment</button>
 
-      {pinInput && <PinInput setPinInput={togglePinInput} />}
+      {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput}  amount={dataPlans[network][dataSelected].price} phone={"0" +phoneNumber} network={network} />}
 
+      {pinInput && <PinInput action={submit} setPinInput={togglePinInput} />}
+      {
+                isLoading
+                &&
+                <Loader />
+            }
     </div>
   )
 }
