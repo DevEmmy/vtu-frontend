@@ -140,7 +140,7 @@ function buyData() {
 
       <div className='grid grid-cols-3 gap-4 '>
         {dataPlans[network].map((item: any, index: number) => (
-          <div key={index} onClick={()=> setDataSelected(index)}  className={`relative flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg border-primary ${ dataSelected === index && "border-green-400 border-2"}`}>
+          <div key={index} onClick={()=> setDataSelected(index)}  className={`relative flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg  ${ dataSelected === index ? "border-green-400 border-2": "border-primary"}`}>
             {
               index === dataSelected&&
               <div className="absolute -top-3 -right-3  bg-green-600 text-white rounded-full p-1">

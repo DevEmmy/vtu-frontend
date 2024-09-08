@@ -125,7 +125,7 @@ function dashboard() {
             {quickAction.map((item, index) =>{
               return (
                
-                <Link to={item.link} key={index} className='flex flex-col items-center'>
+                <Link to={item.link} key={index} className='flex flex-col max-w-[90px] text-center items-center'>
                 <div className='w-20 h-20 rounded-xl flex justify-center items-center text-2xl bg-pale text-primary hover:text-white  hover:bg-primary'>
                   {item.img}
                 </div>

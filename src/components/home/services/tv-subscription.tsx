@@ -4,13 +4,26 @@ import { RiArrowDropDownLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import ConfirmPayment from '../confirm-payment';
 import PinInput from '../pin-input'
-import TVItem from '../tv-items';
+
 
 function tvSubscription() {
-    const [isTV, setIsTV] = React.useState(false)
-    const toggleTV = () =>{
-        setIsTV(prev => !prev)
-    } 
+
+
+    const [TV, setTV] = React.useState("phcn")
+    const  TVType= [
+        {
+          title: "GOTV",
+          value: "gotv"
+        },
+        {
+          title: "DSTV",
+          value: "dstv"
+        },
+        {
+          title: "Startimes",
+          value: "startimes"
+        }
+      ]
 
     const [confirm, setConfirm] = React.useState(false)
     const toggleConfirm = () =>{
@@ -58,10 +71,23 @@ function tvSubscription() {
         <h1 className='text-xl font-bold'>TV Subscription</h1>
 
         <div className='flex flex-col gap-5'>
-            <div onClick={toggleTV} className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
+            {/* <div onClick={toggleTV} className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
                 <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Biller' value={'GOTV'}/>
                 <RiArrowDropDownLine className='text-3xl' />
+            </div> */}
+            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
+              <select className='bg-gray-100 w-full focus:outline-none' value={TV} onChange={(e) => {setTV(e.target.value)}}>
+                {
+                    TVType.map((n, i) => {
+                        return (
+                        <option value={n.value} key={i}>{n.title}</option>
+                        )
+                    })
+                    }
+              </select>
+                
             </div>
+
             <div className='py-2 border-b-2'>
                 <input type="text" placeholder='Smartcard Number' className='w-full focus:outline-none placeholder:text-gray-300' />
             </div>
@@ -93,7 +119,7 @@ function tvSubscription() {
             </div>
            ))}
         </div>
-        {isTV && <TVItem />}
+        
 
 
 
