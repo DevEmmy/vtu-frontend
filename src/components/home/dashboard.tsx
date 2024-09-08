@@ -7,7 +7,7 @@ import { IoEyeOutline, IoWalletOutline, IoReceiptOutline, IoChatbubblesOutline }
 import { TbMobiledata } from "react-icons/tb";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlinePrinter } from "react-icons/hi2";
-import { RiExchangeDollarFill } from "react-icons/ri";
+import { RiExchangeDollarFill, RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
 import balance from '../../../public/BALANCE.png'
 import frame from '../../../public/Frame 399.png'
 import img1 from '../../../public/trans1.png'
@@ -18,6 +18,8 @@ import { useUser } from '../../hooks/Auth';
 import { useAllTransactions } from '../../hooks/MakePayments';
 import Each from '../Transaction/Each';
 import useMonnify from '../../hooks/useMonnify';
+import { useState } from 'react';
+import formatPrice from '../../utils/formatPrice';
 
 function dashboard() {
   
@@ -42,7 +44,7 @@ function dashboard() {
     },
     {
       img: <IoReceiptOutline />,
-      title: "Pay Bills",
+      title: "Pay Electricity Bills",
       link: '/pay-bills'
     }
   ];
@@ -71,48 +73,9 @@ function dashboard() {
   ];
 
 
-
-  // const transactions = [
-  //   {
-  //     img: img1,
-  //     title: "Top up Airtime",
-  //     date: "June 20 2024",
-  //     time: "10:00 AM",
-  //     price: '-50.00'
-  //   },
-  //   {
-  //     img: img4,
-  //     title: "Funded Wallet",
-  //     date: "June 20 2024",
-  //     time: "02:00 PM",
-  //     price: '+20000.00'
-  //   },
-  //   {
-  //     img: img2,
-  //     title: "Pay Bills",
-  //     date: "June 20 2024",
-  //     time: "11:00 AM",
-  //     price: '-2000.00'
-  //   },
-  //   {
-  //     img: img3,
-  //     title: "Smile Data",
-  //     date: "June 20 2024",
-  //     time: "03:00 PM",
-  //     price: '-200.00'
-  //   },
-  //   {
-  //     img: img4,
-  //     title: "Buy Data",
-  //     date: "June 20 2024",
-  //     time: "01:00 PM",
-  //     price: '-500.00'
-  //   }
-  // ]
-
   const { transactions } = useAllTransactions()
   const { user } = useUser()
-
+  const [hideBalance, setHideBalance] = useState(false)
 
   return (
     <div className='flex flex-col w-full'>
@@ -134,9 +97,21 @@ function dashboard() {
           <img src={balance} alt="" className='z-10' />
           <img src={frame} alt="" className='-mt-2 ' />
           <div className='absolute z-30 w-full -mt-2 text-white h-full flex flex-col justify-center pl-6'>
-            <h3 className='text-sm text-gray-100 font-bold'>Wallet Balance</h3>
+            
+            <div className="flex items-center gap-3">
+            <h3 className='text-lg text-gray-100 font-bold'>Wallet Balance</h3>
+            <p onClick={()=> setHideBalance(!hideBalance)} className='cursor-pointer'>
+              {
+                !hideBalance
+                ?
+                <RiEyeLine />
+                :
+                <RiEyeCloseLine />
+              }
+            </p>
+            </div>
             <div className='flex text-2xl items-center gap-1 font-bold'>
-              <h1>₦{user.accountBalance}</h1>
+              <h1>₦{hideBalance ? "***"  : formatPrice(user.accountBalance)}</h1>
               {/* <IoEyeOutline /> */}
             </div>
           </div>

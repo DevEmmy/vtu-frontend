@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import img1 from '../../../public/trans1.png'
+import formatPrice from '../../utils/formatPrice'
 
 const Each = ({item}: any) => {
     const networks: any = {
@@ -45,7 +46,7 @@ const Each = ({item}: any) => {
                     className='text-xs'>{item.status}</p>
                     <p className='text-xs text-gray-400'>{date} at {time}</p>
                 </div>
-                <h2 className='ml-auto font-bold'>N{item.amount}</h2>
+                <h2 className='ml-auto font-bold'>₦{formatPrice(item.amount)}</h2>
             </div>
         </Link>
     )
