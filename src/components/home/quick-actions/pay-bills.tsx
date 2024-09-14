@@ -9,123 +9,149 @@ import { HiCheck } from "react-icons/hi2";
 
 
 function payBills() {
-    const [confirm, setConfirm] = React.useState(false)
-    const toggleConfirm = () =>{
-        if (isValidInput) {
-            setConfirm(prev => !prev)
-        }
-        
-    } 
+  const [confirm, setConfirm] = React.useState(false);
+  const toggleConfirm = () => {
+    if (isValidInput) {
+      setConfirm((prev) => !prev);
+    }
+  };
 
-    
-    const [bill, setBill] = React.useState("phcn")
-    const electricityBills = [
-        {
-          title: "PHCN",
-          value: "phcn"
-        },
-        {
-          title: "EKEDP",
-          value: "ekedp"
-        },
-        {
-          title: "AEDC",
-          value: "aedc"
-        }
-      ]
+  const [bill, setBill] = React.useState("phcn");
+  const electricityBills = [
+    {
+      title: "PHCN",
+      value: "phcn",
+    },
+    {
+      title: "EKEDP",
+      value: "ekedp",
+    },
+    {
+      title: "AEDC",
+      value: "aedc",
+    },
+  ];
 
-    
-      const priceOption = [
-        
-        { price: 1000 },
-        { price: 1500 },
-        { price: 2000 },
-        { price: 5000 },
-        { price: 1000 },
-    ]
-    const [priceSelected, setPriceSelected] = React.useState<number | null>()
-    
-    const [pinInput, setPinInput] = React.useState(false)
-    const togglePinInput = () =>{
-        setPinInput(prev => !prev)
-    } 
-
-    const [isBillType, setIsBillType] = React.useState(false)
-    const toggleNetwork = () =>{
-        setIsBillType(prev => !prev)
-    } 
-
-    const [inputValue, setInputValue] = React.useState('');
-
-    const handleInputChange = (e: { target: { value: any; }; }) => {
-      const value = e.target.value;
-      // Only allow valid numbers or an empty string
-      if (value === '' || /^\d+$/.test(value)) {
-        setInputValue(value);
-      }
-    };
+  const priceOption = [
+    { price: 1000 },
+    { price: 1500 },
+    { price: 2000 },
+    { price: 5000 },
+    { price: 1000 },
+  ];
   
-    const isValidInput = inputValue !== '' && /^\d+$/.test(inputValue);
+  const [priceSelected, setPriceSelected] = React.useState<number | null>(null);
+
+  const [pinInput, setPinInput] = React.useState(false);
+  const togglePinInput = () => {
+    setPinInput((prev) => !prev);
+  };
+
+  const [isBillType, setIsBillType] = React.useState(false);
+  const toggleNetwork = () => {
+    setIsBillType((prev) => !prev);
+  };
+
+  const [inputValue, setInputValue] = React.useState("");
+
+  const handleInputChange = (e: { target: { value: any } }) => {
+    const value = e.target.value;
+    // Only allow valid numbers or an empty string
+    if (value === "" || /^\d+$/.test(value)) {
+      setInputValue(value);
+      setPriceSelected(null); // Reset the selected price when user types a custom amount
+    }
+  };
+
+  const isValidInput = inputValue !== "" && /^\d+$/.test(inputValue);
+
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
-        <Link to={"/home"} className='text-xl'>
-            <FaArrowLeftLong />
-        </Link>
+      <Link to={"/home"} className="text-xl">
+        <FaArrowLeftLong />
+      </Link>
 
-        <h1 className='text-xl font-bold'>Pay Electricity Bills</h1>
+      <h1 className="text-xl font-bold">Pay Electricity Bills</h1>
 
-        <div className='flex flex-col gap-5'>
-
-            
-            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-              <select className='bg-gray-100 w-full focus:outline-none' value={bill} onChange={(e) => {setBill(e.target.value)}}>
-                {
-                    electricityBills.map((n, i) => {
-                        return (
-                        <option value={n.value} key={i}>{n.title}</option>
-                        )
-                    })
-                    }
-              </select>
-                
-            </div>
-
-            
-
-            <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-               <input type="text" className='bg-gray-100 focus:outline-none py-1' placeholder='Meter Number'/>
-            </div>
-        </div>
-        <div className='flex py-2 border-b-2 text-sm items-center'>
-            <h1 className='font-bold mr-2'>$</h1>
-            <input type="text" value={inputValue} onChange={handleInputChange} placeholder='Enter Amount' className='py-1 text-lg focus:outline-none'/>
-            <button onClick={() => toggleConfirm()} className={`${isValidInput ? 'opacity-100' : 'opacity-50 cursor-not-allowed'} px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}>
-                Pay
-            </button>
+      <div className="flex flex-col gap-5">
+        <div className="bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3">
+          <select
+            className="bg-gray-100 w-full focus:outline-none"
+            value={bill}
+            onChange={(e) => {
+              setBill(e.target.value);
+            }}
+          >
+            {electricityBills.map((n, i) => {
+              return (
+                <option value={n.value} key={i}>
+                  {n.title}
+                </option>
+              );
+            })}
+          </select>
         </div>
 
-        <div className='grid grid-cols-3 gap-4 '>
+        <div className="bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3">
+          <input
+            type="text"
+            className="bg-gray-100 focus:outline-none py-1"
+            placeholder="Meter Number"
+          />
+        </div>
+      </div>
+      <div className="flex py-2 border-b-2 text-sm items-center">
+        <h1 className="font-bold mr-2">₦</h1>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Enter Amount"
+          className="py-1 text-lg focus:outline-none"
+        />
+        <button
+          onClick={() => toggleConfirm()}
+          className={`${
+            isValidInput ? "opacity-100" : "opacity-50 cursor-not-allowed"
+          } px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}
+        >
+          Pay
+        </button>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 ">
         {priceOption.map((item: any, index: number) => (
-          <div key={index} onClick={()=> setPriceSelected(index)}  className={`relative flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg  ${ priceSelected === index ? "border-green-400 border-2": "border-primary"}`}>
-            {
-              index === priceSelected&&
-              <div className="absolute -top-3 -right-3  bg-green-600 text-white rounded-full p-1">
+          <div
+            key={index}
+            onClick={() => {
+              setPriceSelected(index);
+              setInputValue(String(item.price)); // Set the input value to the selected price
+            }}
+            className={`relative flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg  ${
+              priceSelected === index
+                ? "border-green-400 border-2"
+                : "border-primary"
+            }`}
+          >
+            {index === priceSelected && (
+              <div className="absolute -top-3 -right-3 bg-green-600 text-white rounded-full p-1">
                 <HiCheck />
               </div>
-            }
+            )}
             <h2>{item.price}</h2>
           </div>
         ))}
       </div>
-      <button className="bg-primary rounded-lg p-4 text-white"onClick={() => toggleConfirm()}>Proceed to Payment</button>
+      <button className="bg-primary rounded-lg p-4 text-white" onClick={() => toggleConfirm()}>
+        Proceed to Payment
+      </button>
 
+      {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput} />}
 
-        
-        {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput}/>}
-
-        {pinInput && <PinInput setPinInput={togglePinInput}/>}
+      {pinInput && <PinInput setPinInput={togglePinInput} />}
     </div>
-  )
+  );
 }
+
 
 export default payBills
