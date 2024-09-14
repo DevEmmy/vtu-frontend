@@ -37,7 +37,7 @@ function payBills() {
     { price: 1500 },
     { price: 2000 },
     { price: 5000 },
-    { price: 1000 },
+    { price: 10000 },
   ];
   
   const [priceSelected, setPriceSelected] = React.useState<number | null>(null);
@@ -53,17 +53,22 @@ function payBills() {
   };
 
   const [inputValue, setInputValue] = React.useState("");
+  const [meterNumber, setMeterNumber] = React.useState("");
 
   const handleInputChange = (e: { target: { value: any } }) => {
     const value = e.target.value;
-    // Only allow valid numbers or an empty string
     if (value === "" || /^\d+$/.test(value)) {
       setInputValue(value);
       setPriceSelected(null); // Reset the selected price when user types a custom amount
     }
   };
 
+  const handleMeterNumberChange = (e: { target: { value: string } }) => {
+    setMeterNumber(e.target.value);
+  };
+
   const isValidInput = inputValue !== "" && /^\d+$/.test(inputValue);
+  const isMeterNumberValid = meterNumber.trim() !== ""; 
 
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
@@ -97,26 +102,33 @@ function payBills() {
             type="text"
             className="bg-gray-100 focus:outline-none py-1"
             placeholder="Meter Number"
+            value={meterNumber}
+            onChange={handleMeterNumberChange}
           />
         </div>
       </div>
-      <div className="flex py-2 border-b-2 text-sm items-center">
+      <div className='flex py-2 border-b-2 text-sm items-center justify-between'>
+      <div className="flex items-center gap-2">
+
         <h1 className="font-bold mr-2">₦</h1>
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Enter Amount"
-          className="py-1 text-lg focus:outline-none"
+          className="py-1 w-2/3 text-lg focus:outline-none"
         />
-        <button
-          onClick={() => toggleConfirm()}
-          className={`${
-            isValidInput ? "opacity-100" : "opacity-50 cursor-not-allowed"
-          } px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}
-        >
-          Pay
-        </button>
+      </div>
+      <button
+  onClick={() => toggleConfirm()}
+  disabled={!isValidInput || !isMeterNumberValid}
+  className={`${
+    isValidInput && isMeterNumberValid ? "opacity-100" : "opacity-50 cursor-not-allowed"
+  } px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}
+>
+  Pay
+</button>
+
       </div>
 
       <div className="grid grid-cols-3 gap-4 ">
@@ -142,11 +154,11 @@ function payBills() {
           </div>
         ))}
       </div>
-      <button className="bg-primary rounded-lg p-4 text-white" onClick={() => toggleConfirm()}>
+      {/* <button className="bg-primary rounded-lg p-4 text-white" onClick={() => toggleConfirm()}>
         Proceed to Payment
-      </button>
+      </button> */}
 
-      {confirm && <ConfirmPayment setConfirm={toggleConfirm} setPinInput={togglePinInput} />}
+      {confirm && <ConfirmPayment setConfirm={toggleConfirm} amount={inputValue} setPinInput={togglePinInput} />}
 
       {pinInput && <PinInput setPinInput={togglePinInput} />}
     </div>
