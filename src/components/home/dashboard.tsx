@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Nav from './nav'
 import userImg from '../../../public/Ellipse 97.png'
 import { GoBell } from "react-icons/go";
+import { CiMenuBurger } from "react-icons/ci";
 import { IoEyeOutline, IoWalletOutline, IoReceiptOutline, IoChatbubblesOutline } from "react-icons/io5";
 import { TbMobiledata } from "react-icons/tb";
 import { BsTelephone } from "react-icons/bs";
@@ -88,9 +89,9 @@ function dashboard() {
             <h1 className='font-semibold '>Hi, {user.firstName}</h1>
             <p className='text-sm text-gray-400'>welcome, let's make payments!</p>
           </div>
-          {/* <div className='ml-auto flex items-center'>
-            <GoBell className='text-primary text-2xl' />
-          </div> */}
+          <div className='ml-auto flex items-center'>
+          <CiMenuBurger className='text-2xl'/>
+          </div>
         </div>
 
         <div className='flex flex-col items-center relative'>
