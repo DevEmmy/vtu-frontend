@@ -21,9 +21,12 @@ import Each from '../Transaction/Each';
 import useMonnify from '../../hooks/useMonnify';
 import { useState } from 'react';
 import formatPrice from '../../utils/formatPrice';
-
+import SideNav  from './side-nav';
 function dashboard() {
-  
+  const { transactions } = useAllTransactions()
+  const { user } = useUser()
+  const [hideBalance, setHideBalance] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   
  
 
@@ -74,9 +77,6 @@ function dashboard() {
   ];
 
 
-  const { transactions } = useAllTransactions()
-  const { user } = useUser()
-  const [hideBalance, setHideBalance] = useState(false)
 
   return (
     <div className='flex flex-col w-full'>
@@ -87,13 +87,13 @@ function dashboard() {
           </div>
           <div>
             <h1 className='font-semibold '>Hi, {user.firstName}</h1>
-            <p className='text-sm text-gray-400'>welcome, let's make payments!</p>
+            <p className='text-[0.65rem] sm:text-sm text-gray-400'>welcome, let's make payments!</p>
           </div>
           <div className='ml-auto flex items-center'>
-          <CiMenuBurger className='text-2xl'/>
+          <CiMenuBurger className='text-2xl cursor-pointer' onClick={() => setIsOpen(true)}/>
           </div>
         </div>
-
+        <SideNav isOpen={isOpen} setIsOpen={setIsOpen}/>
         <div className='flex flex-col items-center relative'>
           <img src={balance} alt="" className='z-10' />
           <img src={frame} alt="" className='-mt-2 ' />
