@@ -94,9 +94,9 @@ function dashboard() {
           </div>
         </div>
         <SideNav isOpen={isOpen} setIsOpen={setIsOpen}/>
-        <div className='flex flex-col items-center relative'>
-          <img src={balance} alt="" className='z-10' />
-          <img src={frame} alt="" className='-mt-2 ' />
+        <div className='flex flex-col items-center relative w-full'>
+          <img src={balance} alt="" className='z-10 w-full' />
+          <img src={frame} alt="" className='-mt-2 w-full' />
           <div className='absolute z-30 w-full -mt-2 text-white h-full flex flex-col justify-center pl-6'>
             
             <div className="flex items-center gap-3">
@@ -112,7 +112,7 @@ function dashboard() {
             </p>
             </div>
             <div className='flex text-2xl items-center gap-1 font-bold'>
-              <h1>₦{hideBalance ? "***"  : formatPrice(user.accountBalance)}</h1>
+              <h1>₦{hideBalance ? "****"  : formatPrice(user.accountBalance)}</h1>
               {/* <IoEyeOutline /> */}
             </div>
           </div>
