@@ -24,7 +24,6 @@ interface Props {
 
 const SideNav: React.FC<Props> = ({ isOpen, setIsOpen }) => {
   const navItems: NavItem[] = [
-    { title: "Dashboard", link: "/home", icon: LuLayoutDashboard },
     { title: "Fund Wallet", link: "/fund-wallet", icon: IoWalletOutline },
     { title: "Transaction History", link: "/transactions", icon: CiReceipt },
     { title: "Buy Data", link: "/buy-data", icon: TbTransfer },
