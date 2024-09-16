@@ -22,6 +22,7 @@ import useMonnify from '../../hooks/useMonnify';
 import { useState } from 'react';
 import formatPrice from '../../utils/formatPrice';
 import SideNav  from './side-nav';
+import Banner from "../../assets/BANNER.svg"
 function dashboard() {
   const { transactions } = useAllTransactions()
   const { user } = useUser()
@@ -169,8 +170,9 @@ function dashboard() {
             ))}
           </div>
         </div>
-
-
+<Link to={'/fund-wallet'}>
+<img src={Banner} alt="Fund Banner" className='w-full'/>
+</Link>
 
 
 

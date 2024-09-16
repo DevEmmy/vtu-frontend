@@ -37,7 +37,7 @@ const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput, action }) =>{
     }
   };
   return (
-    <div className='absolute top-0 w-full left-0 h-screen flex flex-col justify-end z-20  bg-[rgba(0,0,0,0.4)]'>
+    <div className='absolute bottom-0 w-full left-0 h-full flex flex-col justify-end z-20  bg-[rgba(0,0,0,0.4)]'>
 
     
     <div className='bg-white w-full py-8 pt-14 rounded-t-3xl px-5 text-center'>
