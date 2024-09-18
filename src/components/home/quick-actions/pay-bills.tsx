@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import ConfirmPayment from '../confirm-payment';
-import PinInput from '../pin-input'
-import BillType from '../bill-type'
+import ConfirmPayment from "../confirm-payment";
+import PinInput from "../pin-input";
+import BillType from "../bill-type";
 import { HiCheck } from "react-icons/hi2";
-
 
 function payBills() {
   const [confirm, setConfirm] = React.useState(false);
@@ -39,7 +38,7 @@ function payBills() {
     { price: 5000 },
     { price: 10000 },
   ];
-  
+
   const [priceSelected, setPriceSelected] = React.useState<number | null>(null);
 
   const [pinInput, setPinInput] = React.useState(false);
@@ -59,7 +58,7 @@ function payBills() {
     const value = e.target.value;
     if (value === "" || /^\d+$/.test(value)) {
       setInputValue(value);
-      setPriceSelected(null); // Reset the selected price when user types a custom amount
+      setPriceSelected(null);
     }
   };
 
@@ -68,10 +67,12 @@ function payBills() {
   };
 
   const isValidInput = inputValue !== "" && /^\d+$/.test(inputValue);
-  const isMeterNumberValid = meterNumber.trim() !== ""; 
+  const isMeterNumberValid = meterNumber.trim() !== "";
 
   return (
-    <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
+    <div
+      className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}
+    >
       <Link to={"/home"} className="text-xl">
         <FaArrowLeftLong />
       </Link>
@@ -107,28 +108,28 @@ function payBills() {
           />
         </div>
       </div>
-      <div className='flex py-2 border-b-2 text-sm items-center justify-between'>
-      <div className="flex items-center gap-2">
-
-        <h1 className="font-bold mr-2">₦</h1>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Enter Amount"
-          className="py-1 w-2/3 text-lg focus:outline-none"
-        />
-      </div>
-      <button
-  onClick={() => toggleConfirm()}
-  disabled={!isValidInput || !isMeterNumberValid}
-  className={`${
-    isValidInput && isMeterNumberValid ? "opacity-100" : "opacity-50 cursor-not-allowed"
-  } px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}
->
-  Pay
-</button>
-
+      <div className="flex py-2 border-b-2 text-sm items-center justify-between">
+        <div className="flex items-center gap-2">
+          <h1 className="font-bold mr-2">₦</h1>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Enter Amount"
+            className="py-1 w-2/3 text-lg focus:outline-none"
+          />
+        </div>
+        <button
+          onClick={() => toggleConfirm()}
+          disabled={!isValidInput || !isMeterNumberValid}
+          className={`${
+            isValidInput && isMeterNumberValid
+              ? "opacity-100"
+              : "opacity-50 cursor-not-allowed"
+          } px-7 py-1 rounded-3xl ml-auto bg-primary text-white`}
+        >
+          Pay
+        </button>
       </div>
 
       <div className="grid grid-cols-3 gap-4 ">
@@ -150,7 +151,7 @@ function payBills() {
                 <HiCheck />
               </div>
             )}
-            <h2>{item.price}</h2>
+            <h2>₦{item.price}</h2>
           </div>
         ))}
       </div>
@@ -158,12 +159,17 @@ function payBills() {
         Proceed to Payment
       </button> */}
 
-      {confirm && <ConfirmPayment setConfirm={toggleConfirm} amount={inputValue} setPinInput={togglePinInput} />}
+      {confirm && (
+        <ConfirmPayment
+          setConfirm={toggleConfirm}
+          amount={inputValue}
+          setPinInput={togglePinInput}
+        />
+      )}
 
       {pinInput && <PinInput setPinInput={togglePinInput} />}
     </div>
   );
 }
 
-
-export default payBills
+export default payBills;
