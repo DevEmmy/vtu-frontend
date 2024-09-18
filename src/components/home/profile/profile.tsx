@@ -39,7 +39,7 @@ function Profile() {
           <h1 className=' text-xl'>{user.firstName + " " + user.lastName}</h1>
         </div>
   
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 px-2'>
   
           <div className='flex justify-between items-center py-2'>
             <h2 className='font-bold'>First Name</h2>
