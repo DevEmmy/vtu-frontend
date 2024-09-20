@@ -100,7 +100,7 @@ const PasswordInputScreen = () => {
           <img src={check} alt="" />
           <h1 className='font-semibold text-xl'>Successful</h1>
           <p className='text-sm text-gray-500'>You have successfully set up a password</p>
-          <Link to={"/home"} className='w-full'>
+          <Link to={"/"} className='w-full'>
               <button className='font-bold text-white bg-primary w-full py-4 rounded-3xl'>Get Started</button>
           </Link>
           

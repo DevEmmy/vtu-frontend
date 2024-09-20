@@ -10,9 +10,9 @@ import { useFundWallet, useUser } from "../../../hooks/Auth";
 
 function fundWallet() {
   const [amount, setAmount] = useState(0)
-  const {success, isError, isLoading, fundWalletFn} = useFundWallet()
+  const {success, isError, isLoading, fundWalletFn} = useFundWallet();
 
-  const {user} = useUser()
+  const {user} = useUser();
 
   const config = {
     amount: amount,
@@ -43,18 +43,15 @@ function fundWallet() {
   
   return (
     <div className='px-3 py-5 flex flex-col gap-7 min-h-screen'>
-        <Link to={"/home"} className='text-xl'>
+        <Link to={"/"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
         <h1 className='text-xl font-bold'>Fund Wallet</h1>
-        
         <div className="flex flex-col gap-5">
           <p>How Much do you want to fund?</p>
           <input type="number" className="border-b focus:outline-none p-3" placeholder="100 - 100,000" onChange={(e: any)=> setAmount(e.target.value)}/>
           <button className="bg-primary rounded-lg p-4 text-white" onClick={submit}>Proceed to Payment</button>
         </div>
-          
-            
     </div>
   )
 }

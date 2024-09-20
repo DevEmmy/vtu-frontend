@@ -51,7 +51,7 @@ function smileData() {
       ];
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
-        <Link to={"/home"} className='text-xl'>
+        <Link to={"/"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
 

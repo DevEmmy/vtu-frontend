@@ -17,7 +17,7 @@ const nav: React.FC<Prop> = ({ transaction, dashboard, profile, settings }) =>  
         {
             img: <LuLayoutDashboard />,
             title: "Dashboard",
-            link: '/home',
+            link: '/',
             color: dashboard? 'text-primary' : 'text-gray-400'
         },
         {

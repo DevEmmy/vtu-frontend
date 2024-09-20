@@ -61,7 +61,7 @@ function transactions() {
 
 
       <div className='px-3 py-5 flex flex-col gap-7 min-h-screen'>
-        <Link to={"/home"} className='text-xl'>
+        <Link to={"/"} className='text-xl'>
           <FaArrowLeftLong />
         </Link>
 

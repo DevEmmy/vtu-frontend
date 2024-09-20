@@ -7,8 +7,10 @@ import { FaRegBell } from "react-icons/fa";
 import { MdOutlinePrivacyTip } from "react-icons/md";
 import { LiaHeadsetSolid } from "react-icons/lia";
 import { RiArrowDropRightLine } from "react-icons/ri";
+import { useLogout } from "../../../hooks/Auth";
 
 function settings() {
+    const { logout } = useLogout();
 
     const settings = [
         {
@@ -36,7 +38,7 @@ function settings() {
     <div>
 
         <div className='relative px-3 py-5 flex flex-col gap-7 min-h-screen'>
-        <Link to={"/home"} className='text-xl'>
+        <Link to={"/"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
 
@@ -55,7 +57,7 @@ function settings() {
             ))}
         </div>
 
-        <div className='flex justify-center text-primary text-sm font-bold'>
+        <div onClick={logout} className='flex justify-center text-primary text-sm font-bold'>
             <p>Log out</p>
         </div>
 

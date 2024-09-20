@@ -106,7 +106,7 @@ function buyAirtime() {
           isScrolled ? "flex items-center z-20 gap-1 p-2" : "block"
         }`}
       >
-        <Link to={"/home"} className="text-xl">
+        <Link to={"/"} className="text-xl">
           <FaArrowLeftLong />
         </Link>
 

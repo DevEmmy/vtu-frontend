@@ -6,7 +6,7 @@ import { TiContacts } from "react-icons/ti";
 function bulkSms() {
   return (
     <div className='px-3 py-5 flex flex-col gap-9 min-h-screen'>
-        <Link to={"/home"} className='text-xl'>
+        <Link to={"/"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
         <h1 className='text-xl font-bold'>Bulk SMS</h1>

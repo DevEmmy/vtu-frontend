@@ -85,7 +85,7 @@ function buyData() {
       <div
         className={`transition-all duration-500 ease-in-out bg-white fixed w-full top-0 p-3 ${isScrolled ? 'flex items-center z-20 gap-1 p-2' : 'block'}`}
       >
-        <Link to="/home" className="text-xl">
+        <Link to="/" className="text-xl">
           <FaArrowLeftLong />
         </Link>
 
