@@ -1,17 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Nav from "./nav";
 import userImg from "../../../public/Ellipse 97.png";
 import { GoBell } from "react-icons/go";
+import { PiTelevisionSimpleBold } from "react-icons/pi";
+import { SiHostinger } from "react-icons/si";
 import { CiMenuBurger } from "react-icons/ci";
 import {
   IoEyeOutline,
   IoWalletOutline,
   IoReceiptOutline,
   IoChatbubblesOutline,
+  IoSchoolOutline,
 } from "react-icons/io5";
 import { TbMobiledata } from "react-icons/tb";
 import { BsTelephone } from "react-icons/bs";
-import { HiOutlinePrinter } from "react-icons/hi2";
 import {
   RiExchangeDollarFill,
   RiEyeCloseLine,
@@ -27,15 +29,18 @@ import { useUser } from "../../hooks/Auth";
 import { useAllTransactions } from "../../hooks/MakePayments";
 import Each from "../Transaction/Each";
 import useMonnify from "../../hooks/useMonnify";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import formatPrice from "../../utils/formatPrice";
 import SideNav from "./side-nav";
 import Banner from "../../assets/BANNER.svg";
+
+
 function dashboard() {
   const { transactions } = useAllTransactions();
   const { user } = useUser();
-  const [hideBalance, setHideBalance] = useState(false);
+  const [hideBalance, setHideBalance] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const quickAction = [
     {
@@ -65,23 +70,37 @@ function dashboard() {
       img: <IoChatbubblesOutline />,
       title: "Bulk SMS",
       link: "/bulk-sms",
+      external: false,
     },
     {
-      img: <TbMobiledata />,
-      title: "Smile Data",
-      link: "/smile-data",
+      img: <IoSchoolOutline />,
+      title: "Educational Pin",
+      link: "/educational-pins",
+      external: false,
     },
     {
-      img: <HiOutlinePrinter />,
-      title: "Recharge Printing",
-      link: "/fund-wallet",
+      img: <PiTelevisionSimpleBold />,
+      title: "TV Subscription",
+      link: "/tv-subscription",
+      external: false,
     },
     {
-      img: <RiExchangeDollarFill />,
-      title: "Airtime to Cash",
-      link: "/fund-wallet",
+      img: <SiHostinger />,
+      title: "Domain and Hosting",
+      link: "https://www.hostinger.com",
+      external: true,
     },
   ];
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/on-boarding");
+    }
+  }, [user, navigate]);
+
+  if (!user) {
+    return null; 
+  }
 
   return (
     <div className="flex flex-col w-full">
@@ -164,21 +183,33 @@ function dashboard() {
             </Link>
           </div>
           <div className="flex justify-between">
-            {service.map((item, index) => (
-              <Link
-                to={item.link}
-                className="flex flex-col items-center w-20"
-                key={index}
-              >
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center text-2xl  h-10"
-                >
-                  {item.img}
-                </div>
-                <p className="text-xs text-center">{item.title}</p>
-              </Link>
-            ))}
+          {service.map((item, index) =>
+          item.external ? (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center w-20"
+              key={index}
+            >
+              <div className="flex flex-col items-center justify-center text-2xl h-10">
+                {item.img}
+              </div>
+              <p className="text-xs text-center">{item.title}</p>
+            </a>
+          ) : (
+            <Link
+              to={item.link}
+              className="flex flex-col items-center w-20"
+              key={index}
+            >
+              <div className="flex flex-col items-center justify-center text-2xl h-10">
+                {item.img}
+              </div>
+              <p className="text-xs text-center">{item.title}</p>
+            </Link>
+          )
+        )}
           </div>
         </div>
 
