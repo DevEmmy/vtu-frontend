@@ -29,11 +29,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Onboarding />} />
+        <Route path='/on-boarding' element={<Onboarding />} />
         <Route path='/login' element={<Login />} />
         <Route path='/new-account' element={<NewAccount />}></Route>
         <Route path='/security' element={<Security />}></Route>
-        <Route path='/home' element={<Index />}></Route>
+        <Route path='/' element={<Index />}></Route>
         <Route path='/fund-wallet' element={<FundWallet />}></Route>
         <Route path='/bulk-sms' element={<BulkSMS />}></Route>
         <Route path='/successful' element={<Successful />}></Route>
