@@ -25,7 +25,7 @@ export const useLogin = () => {
                 const { token, user } = response.data.payload
                 saveToStorage(token, user)
                 toastSuccess(response.data.message)
-                router("/home")
+                router("/")
             }
             else {
                 toastError(response.data.message)
@@ -81,6 +81,18 @@ export const useSignUp = () => {
     }
     return { isError, isLoading, response, signUpFn }
 }
+
+export const useLogout = () => {
+    const navigate = useNavigate();
+  
+    const logout = () => {
+      localStorage.removeItem("user");
+
+      navigate("/on-boarding");
+    };
+  
+    return { logout };
+  }
 
 export const useUser = ()=>{
     let [user, setUser] = useState(JSON.parse(localStorage.getItem("user") as string))
