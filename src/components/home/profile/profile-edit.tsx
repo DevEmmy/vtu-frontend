@@ -19,7 +19,7 @@ function profileEdit() {
         lastName: user.lastName || '',
         email: user.email || '',
         phoneNumber: user.phoneNumber || '',
-        address: user.address || '',  // Ensure address is included
+        // address: user.address || '',  
     }
 
     const [profile, setProfile] = React.useState(defaultProfile)
@@ -34,7 +34,7 @@ function profileEdit() {
 
     return (
         <div className='relative px-3 py-5 flex flex-col gap-7 min-h-screen'>
-            <Link to={"/home"} className='text-xl'>
+            <Link to={"/"} className='text-xl'>
                 <FaArrowLeftLong />
             </Link>
 

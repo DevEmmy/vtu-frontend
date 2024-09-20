@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import curve from '../../../../public/Rectangle 49.png'
 import Nav from '../nav'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaArrowLeftLong } from 'react-icons/fa6'
 import { CiEdit } from "react-icons/ci";
 import userImg from '../../../../public/Ellipse 97.png'
@@ -11,7 +11,8 @@ import { useUser } from '../../../hooks/Auth'
 type ProfileTitle = 'email' | 'phone' | 'address'
 
 function Profile() {
-
+  const { user } = useUser();
+  const navigate = useNavigate();
   // const profileTitle = ['Email' , 'Phone Number', 'Address']
 
   const [profile] = React.useState({
@@ -21,7 +22,16 @@ function Profile() {
     address: 'No1 Adekola street Alimosho Lagos State'
   })
 
-  const { user } = useUser();
+  useEffect(() => {
+    if (!user) {
+      // If no user, redirect to onboarding
+      navigate("/on-boarding");
+    }
+  }, [user, navigate]);
+
+  if (!user) {
+    return null; // or show a loading spinner until the user is fetched
+  }
 
   return (
     <div className='relative'>
@@ -30,7 +40,7 @@ function Profile() {
       </div>
       <div className='relative px-3 py-5 flex flex-col gap-7 min-h-screen'>
   
-        <Link to={"/home"} className='text-xl'>
+        <Link to={"/"} className='text-xl'>
           <FaArrowLeftLong />
         </Link>
   
@@ -61,10 +71,10 @@ function Profile() {
             <p className='text-gray-500 max-w-[60%] text-right'>{user.phoneNumber || "please add phone number"}</p>
           </div>
   
-          <div className='flex justify-between items-center py-2'>
+          {/* <div className='flex justify-between items-center py-2'>
             <h2 className='font-bold'>Address</h2>
             <p className='text-gray-500 max-w-[60%] text-right'>{user.address || "please add address"}</p>
-          </div>
+          </div> */}
   
         </div>
   
