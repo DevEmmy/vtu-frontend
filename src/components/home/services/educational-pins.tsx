@@ -89,7 +89,7 @@ function EducationalPins() {
             type="text"
             value={inputValue}
             disabled
-            className='py-1 text-lg focus:outline-none bg-transparent'
+            className='py-1 w-2/3 text-lg focus:outline-none bg-transparent'
             onChange={handleInputChange}
           />
           <FaLock className='ml-2' />
