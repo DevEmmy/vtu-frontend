@@ -81,8 +81,8 @@ function EducationalPins() {
         </div>
       </div>
 
-      {/* Amount Input (non-editable) */}
       <div className='flex py-2 border-b-2 text-sm items-center'>
+      <div className="flex items-center gap-2">
         <h1 className='font-bold mr-2'>₦</h1>
         <div className='flex items-center text-gray-500'>
           <input
@@ -93,6 +93,7 @@ function EducationalPins() {
             onChange={handleInputChange}
           />
           <FaLock className='ml-2' />
+      </div>
         </div>
         <button
           onClick={toggleConfirm}
