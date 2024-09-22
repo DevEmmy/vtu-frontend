@@ -12,7 +12,7 @@ interface ConfirmEduPaymentProps {
   duration: string,
 }
 
-const ConfirmEduPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, biller, mobileNumber, serviceProvider }) => {
+const ConfirmEduPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, biller, mobileNumber }) => {
   
   return (
     <div className='absolute bottom-0 w-full left-0 h-full flex flex-col justify-end z-20  bg-[rgba(0,0,0,0.4)]'>
@@ -26,10 +26,6 @@ const ConfirmEduPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, bil
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>Biller name</p>
               <h3 className='font-bold'>{biller}</h3>
-            </div>
-            <div className='flex justify-between py-1'>
-              <p className='text-gray-500'>Service Provider</p>
-              <h3 className='font-bold'>{serviceProvider}</h3>
             </div>
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>User ID</p>

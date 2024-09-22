@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaArrowLeftLong, FaLock } from 'react-icons/fa6';
-import { RiArrowDropDownLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import EducationalItems from '../educational-item';
 import ConfirmEduPayment from '../confirm-edu-payment';
@@ -12,7 +11,6 @@ function EducationalPins() {
   const [inputValue, setInputValue] = React.useState('3400');
   const [pinInput, setPinInput] = React.useState(false);
   const [mobileNumber, setMobileNumber] = React.useState('');
-  const [serviceProvider, setServiceProvider] = React.useState('');
   const [biller, setBiller] = React.useState('WAEC Result PIN');
   const togglePaymentItem = () => {
     setPaymentItem((prev) => !prev);
@@ -36,7 +34,7 @@ function EducationalPins() {
     }
   };
 
-  const isValidForm = mobileNumber !== '' && serviceProvider !== '' && /^\d+$/.test(inputValue);
+  const isValidForm = mobileNumber !== '' && /^\d+$/.test(inputValue);
 
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
@@ -47,14 +45,12 @@ function EducationalPins() {
       <h1 className='text-xl font-bold'>Educational Pins</h1>
 
       <div className='flex flex-col gap-5'>
-        {/* Payment Item Select */}
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
           <select value={biller} onChange={(e) => setBiller(e.target.value)} className='bg-gray-100 focus:outline-none py-1 w-full'>
             <option value="WAEC Result PIN">WAEC Result PIN</option>
           </select>
         </div>
 
-        {/* Mobile Number Input */}
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
           <input
             type="text"
@@ -63,21 +59,6 @@ function EducationalPins() {
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
           />
-        </div>
-
-        {/* Service Provider Select */}
-        <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
-          <select
-            className='bg-gray-100 focus:outline-none py-1 w-full'
-            value={serviceProvider}
-            onChange={(e) => setServiceProvider(e.target.value)}
-          >
-            <option value="" disabled>Select Service Provider</option>
-            <option value="MTN">MTN</option>
-            <option value="Airtel">Airtel</option>
-            <option value="Glo">Glo</option>
-            <option value="9mobile">9mobile</option>
-          </select>
         </div>
       </div>
 
@@ -105,7 +86,7 @@ function EducationalPins() {
       </div>
 
       {paymentItem && <EducationalItems setPaymentItem={togglePaymentItem} />}
-      {confirm && <ConfirmEduPayment setConfirm={toggleConfirm} setPinInput={togglePinInput} mobileNumber={mobileNumber} serviceProvider={serviceProvider} amount={inputValue} biller={biller}/>}
+      {confirm && <ConfirmEduPayment setConfirm={toggleConfirm} setPinInput={togglePinInput} mobileNumber={mobileNumber} amount={inputValue} biller={biller}/>}
       {pinInput && <PinInput setPinInput={togglePinInput} />}
     </div>
   );
