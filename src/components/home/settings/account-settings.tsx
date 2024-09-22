@@ -12,11 +12,6 @@ function accountSettings() {
             title: 'Change Password',
             link: '/change-password'
         },
-        {
-            icon: <FaRegCreditCard />,
-            title: 'Payment Method',
-            link: ''
-        }
     ]
   return (
     <div className='relative px-3 py-5 flex flex-col gap-7 min-h-screen'>
