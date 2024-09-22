@@ -16,7 +16,7 @@ function successful() {
         <button onClick={()=>{navigate('/reciept')}} className="bg-primary w-full text-white px-4 py-2 rounded-full mb-4 hover:bg-blue-600">
           View Receipt
         </button>
-        <Link to={'/home'}>
+        <Link to={'/'}>
           <a href="#" className="text-blue-500 hover:underline">Back to Dashboard</a>
 
         </Link>
