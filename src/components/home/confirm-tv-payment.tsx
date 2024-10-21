@@ -15,8 +15,8 @@ interface ConfirmTVPaymentProps {
 const ConfirmTVPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, biller, smartcardNumber,  }) => {
   
   return (
-    <div className='absolute bottom-0 w-full left-0 h-full flex flex-col justify-end z-20  bg-[rgba(0,0,0,0.4)]'>
-      <div className='bg-white rounded-t-3xl w-full flex flex-col gap-6 px-5 py-8'>
+    <div className="fixed w-full left-0 h-screen flex flex-col justify-end z-20 overflow-hidden bg-[rgba(0,0,0,0.4)]">
+      <div className='bg-white bottom-0 rounded-t-3xl w-full flex flex-col gap-6 px-5 py-8'>
           <div className='relative flex justify-center items-center'>
             <h1 className='text-primary  text-3xl'>NGN{amount}</h1>
             <IoMdClose className='absolute right-0 text-2xl' onClick={()=>setConfirm()}/>
