@@ -63,14 +63,14 @@ const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput, action }) =>{
                 <button
                 key={num}
                 onClick={() => handleNumberClick(num.toString())}
-                className="w-full h-8 text-xl"
+                className="w-full h-8 text-xl p-2"
                 >
                 {num}
                 </button>
             ))}
             <button
                 onClick={() => handleNumberClick('0')}
-                className="w-full h-9 text-xl col-start-2 col-end-3"
+                className="w-full h-9 text-xl col-start-2 col-end-3 p-2"
             >
                 0
             </button>
@@ -84,7 +84,7 @@ const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput, action }) =>{
             </div>
             <button
             onClick={handleSubmit}
-            className="w-full py-2 bg-blue-500 text-white rounded-lg"
+            className="w-full py-3 bg-blue-500 text-white rounded-lg"
             >
             Make Payment
             </button>

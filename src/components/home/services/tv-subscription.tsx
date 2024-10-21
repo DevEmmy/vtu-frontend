@@ -95,7 +95,7 @@ function TvSubscription() {
   };
 
   return (
-    <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
+    <div className={`px-3 w-[100%] relative flex flex-col gap-7 h-full`}>
       <div
         className={`transition-all duration-500 ease-in-out bg-white fixed w-full top-0 p-3 ${isScrolled ? 'flex items-center z-20 gap-1 p-2' : 'block'}`}
       >
@@ -105,7 +105,7 @@ function TvSubscription() {
         <h1 className='text-xl font-bold'>TV Subscription</h1>
       </div>
 
-      <div className='flex flex-col gap-5 mt-20'>
+      <div className='flex flex-col gap-5 mt-20 py-5'>
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
           <select className='bg-gray-100 w-full focus:outline-none' value={TV} onChange={(e) => setTV(e.target.value)}>
             {TVType.map((n, i) => (
@@ -134,7 +134,7 @@ function TvSubscription() {
         </div>
       </div>
 
-      <div className='flex flex-col gap-6'>
+      <div className='flex flex-col gap-6 py-5'>
         {offers.map((item, index) => (
           <div
             key={index}

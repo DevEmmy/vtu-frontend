@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import ConfirmPayment from "../confirm-payment";
+import ConfirmBillPayment from "../confirm-bill-payment";
 import PinInput from "../pin-input";
 import BillType from "../bill-type";
 import { HiCheck } from "react-icons/hi2";
@@ -160,10 +160,12 @@ function payBills() {
       </button> */}
 
       {confirm && (
-        <ConfirmPayment
+        <ConfirmBillPayment
           setConfirm={toggleConfirm}
           amount={inputValue}
           setPinInput={togglePinInput}
+          meterNumber={meterNumber}
+          biller={bill}
         />
       )}
 

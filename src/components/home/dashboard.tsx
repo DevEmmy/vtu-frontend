@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "./nav";
-import userImg from "../../../public/Ellipse 97.png";
+import userImg from "/Ellipse 97.png";
 import { GoBell } from "react-icons/go";
 import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { SiHostinger } from "react-icons/si";
@@ -19,12 +19,12 @@ import {
   RiEyeCloseLine,
   RiEyeLine,
 } from "react-icons/ri";
-import balance from "../../../public/BALANCE.png";
-import frame from "../../../public/Frame 399.png";
-import img1 from "../../../public/trans1.png";
-import img2 from "../../../public/trans2.png";
-import img3 from "../../../public/trans3.png";
-import img4 from "../../../public/trans4.png";
+import balance from "/BALANCE.png";
+import frame from "/Frame 399.png";
+import img1 from "/trans1.png";
+import img2 from "/trans2.png";
+import img3 from "/trans3.png";
+import img4 from "/trans4.png";
 import { useUser } from "../../hooks/Auth";
 import { useAllTransactions } from "../../hooks/MakePayments";
 import Each from "../Transaction/Each";
