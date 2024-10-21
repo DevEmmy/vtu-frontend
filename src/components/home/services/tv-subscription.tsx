@@ -105,7 +105,7 @@ function TvSubscription() {
         <h1 className='text-xl font-bold'>TV Subscription</h1>
       </div>
 
-      <div className='flex flex-col gap-5 mt-20 py-5'>
+      <div className='flex flex-col gap-5 mt-20'>
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
           <select className='bg-gray-100 w-full focus:outline-none' value={TV} onChange={(e) => setTV(e.target.value)}>
             {TVType.map((n, i) => (

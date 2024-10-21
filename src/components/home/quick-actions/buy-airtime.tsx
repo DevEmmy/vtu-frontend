@@ -100,7 +100,7 @@ function buyAirtime() {
     makeTransaction(data);
   };
   return (
-    <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 h-full`}>
+    <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 min-h-screen`}>
       <div
         className={`transition-all duration-500 ease-in-out bg-white fixed w-full top-0 p-3 ${
           isScrolled ? "flex items-center z-20 gap-1 p-2" : "block"
