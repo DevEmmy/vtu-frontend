@@ -18,9 +18,11 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.2.1",
     "react-monnify-ts": "^0.0.4",
+    "react-paystack": "^6.0.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.24.1",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@types/node": "^22.5.0",
