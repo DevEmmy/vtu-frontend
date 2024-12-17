@@ -85,6 +85,7 @@ function buyAirtime() {
   const { makeTransaction, isLoading, isError } = useMakeTransaction();
 
   const submit = (pin: string) => {
+    console.log(pin)
     let data = {
       transaction: {
         amount: inputValue,

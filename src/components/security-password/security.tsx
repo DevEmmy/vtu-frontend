@@ -44,7 +44,6 @@ const PasswordInputScreen = () => {
         <div className='w-[100%] flex justify-center'>
          <img src={img1} alt="" className='w-[60%]'/>            
         </div>
-
         
         <div className="flex justify-center gap-8 mb-6">
         {Array.from({ length: 4 }).map((_, index) => (
