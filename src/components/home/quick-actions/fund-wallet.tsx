@@ -15,13 +15,11 @@ function fundWallet() {
 
   const {user} = useUser();
 
-
-
   const config = {
     reference: uuidv4(),
     email: user.email,
     amount: amount * 100,
-    publicKey: "sk_test_de08c04eb8b47c95d24fc8383fdcae573dbdb996",
+    publicKey: "pk_test_15178be8fe560f2460a76e3a3d0d9d7b65d4ba49",
   };
 
   const handlePaystackSuccessAction = (reference) => {
@@ -34,6 +32,7 @@ function fundWallet() {
       ref: reference.reference,
     }
     console.log(data);
+    fundWalletFn({amount: data.amount})
     // createTransaction(data)
   };
 

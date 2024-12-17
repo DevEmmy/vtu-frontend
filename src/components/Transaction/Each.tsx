@@ -37,7 +37,7 @@ const Each = ({item}: any) => {
     return (
         <Link to={`/reciept/${item._id}`}>
             <div className='flex w-full items-center'>
-                <img src={networks[item.details.network]} alt="" className='w-[50px] h-[50px] rounded-full' />
+                <img src={networks[item.details?.network] || "https://static.vecteezy.com/system/resources/thumbnails/004/896/073/small/money-top-up-on-mobile-phone-device-or-smartphone-concept-illustration-flat-design-eps10-graphic-element-for-icon-infographic-empty-state-app-or-web-ui-vector.jpg"} alt="" className='w-[50px] h-[50px] rounded-full' />
                 <div className='flex flex-col ml-2'>
                     <h1 className='font-semibold'>{item.type}</h1>
                     
