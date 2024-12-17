@@ -55,7 +55,7 @@ function EducationalPins() {
           <input
             type="text"
             className='bg-gray-100 focus:outline-none py-1 w-full'
-            placeholder='Mobile Number'
+            placeholder='Account Number'
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
           />
@@ -70,7 +70,7 @@ function EducationalPins() {
             type="text"
             value={inputValue}
             disabled
-            className='py-1 w-2/3 text-lg focus:outline-none bg-transparent'
+            className={`py-1 w-2/3 text-lg focus:outline-none bg-transparent`}
             onChange={handleInputChange}
           />
           <FaLock className='ml-2' />

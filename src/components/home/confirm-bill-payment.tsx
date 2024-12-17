@@ -2,7 +2,7 @@ import React from "react";
 import { IoMdClose } from "react-icons/io";
 import check from '../../../public/CHECK.png'
 
-interface ConfirmTVPaymentProps {
+interface ConfirmBillPaymentProps {
   setConfirm?: Function | null;
   setPinInput?: Function | null;
   network: string,
@@ -12,13 +12,13 @@ interface ConfirmTVPaymentProps {
   duration: string,
 }
 
-const ConfirmTVPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, biller, smartcardNumber,  }) => {
+const ConfirmBillPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, biller, meterNumber }) => {
   
   return (
-    <div className="fixed w-full left-0 h-screen flex flex-col justify-end z-20 overflow-hidden bg-[rgba(0,0,0,0.4)]">
-      <div className='bg-white bottom-0 rounded-t-3xl w-full flex flex-col gap-6 px-5 py-8'>
+    <div className='absolute bottom-0 w-full left-0 h-full flex flex-col justify-end z-20  bg-[rgba(0,0,0,0.4)]'>
+      <div className='bg-white rounded-t-3xl w-full flex flex-col gap-6 px-5 py-8'>
           <div className='relative flex justify-center items-center'>
-            <h1 className='text-primary  text-3xl'>NGN{amount}</h1>
+            <h1 className='text-primary  text-3xl'>₦{amount}</h1>
             <IoMdClose className='absolute right-0 text-2xl' onClick={()=>setConfirm()}/>
           </div>
 
@@ -27,13 +27,9 @@ const ConfirmTVPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, bill
               <p className='text-gray-500'>Biller name</p>
               <h3 className='font-bold'>{biller}</h3>
             </div>
-            <div className='flex justify-between py-1'>
-              {/* <p className='text-gray-500'>Service Provider</p>
-              <h3 className='font-bold'>{serviceProvider}</h3> */}
-            </div>
             <div className='flex justify-between py-2'>
-              <p className='text-gray-500'>Smartcard Number</p>
-              <h3 className='font-bold'>{smartcardNumber}</h3>
+              <p className='text-gray-500'>Meter Number</p>
+              <h3 className='font-bold'>{meterNumber}</h3>
             </div>
           </div>
 
@@ -45,4 +41,4 @@ const ConfirmTVPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, bill
   )
 }
 
-export default ConfirmTVPayment;
+export default ConfirmBillPayment;
