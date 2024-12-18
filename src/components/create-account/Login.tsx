@@ -96,7 +96,7 @@ const Login = () => {
           }
         </button>
       </form>
-
+{/* 
       <div className='flex justify-center'>
         <p className='text-sm text-gray-500'>Or Log In with</p>
       </div>
@@ -114,7 +114,7 @@ const Login = () => {
           <SiFacebook className='text-2xl text-blue-700' />
           <p className='text-gray-500 text-sm'>Facebook</p>
         </button>
-      </div>
+      </div> */}
 
       <p className='text-center text-sm'>
         Already have an account?{' '}
