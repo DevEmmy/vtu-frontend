@@ -19,7 +19,7 @@ function fundWallet() {
     reference: uuidv4(),
     email: user.email,
     amount: amount * 100,
-    publicKey: "pk_test_15178be8fe560f2460a76e3a3d0d9d7b65d4ba49",
+    publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY as string,
   };
 
   const handlePaystackSuccessAction = (reference) => {
@@ -32,7 +32,7 @@ function fundWallet() {
       ref: reference.reference,
     }
     console.log(data);
-    fundWalletFn({amount: data.amount})
+    fundWalletFn({amount: data.amount, ref: config.reference})
     // createTransaction(data)
   };
 
