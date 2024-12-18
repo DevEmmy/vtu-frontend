@@ -94,7 +94,7 @@ const PaymentSuccess = () => {
 
           </div>
 
-          <button onClick={() => navigate('/home')} className="w-full bg-white text-primary py-3 rounded-3xl">
+          <button onClick={() => navigate('/')} className="w-full bg-white text-primary py-3 rounded-3xl">
             Back to Dashboard
           </button>
         </div>
