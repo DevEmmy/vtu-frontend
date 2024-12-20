@@ -52,27 +52,27 @@ function Profile() {
         <div className='flex flex-col gap-4 px-2'>
   
           <div className='flex justify-between items-center py-2'>
-            <h2 className='font-bold'>First Name</h2>
+            <h2 className='font-medium'>First Name</h2>
             <p className='text-gray-500 max-w-[60%] text-right'>{user.firstName}</p>
           </div>
   
           <div className='flex justify-between items-center py-2'>
-            <h2 className='font-bold'>Last Name</h2>
+            <h2 className='font-medium'>Last Name</h2>
             <p className='text-gray-500 max-w-[60%] text-right'>{user.lastName}</p>
           </div>
   
           <div className='flex justify-between items-center py-2'>
-            <h2 className='font-bold'>Email</h2>
+            <h2 className='font-medium'>Email</h2>
             <p className='text-gray-500 max-w-[60%] text-right'>{user.email}</p>
           </div>
   
           <div className='flex justify-between items-center py-2'>
-            <h2 className='font-bold'>Phone Number</h2>
+            <h2 className='font-medium'>Phone Number</h2>
             <p className='text-gray-500 max-w-[60%] text-right'>{user.phoneNumber || "please add phone number"}</p>
           </div>
   
           {/* <div className='flex justify-between items-center py-2'>
-            <h2 className='font-bold'>Address</h2>
+            <h2 className='font-medium'>Address</h2>
             <p className='text-gray-500 max-w-[60%] text-right'>{user.address || "please add address"}</p>
           </div> */}
   

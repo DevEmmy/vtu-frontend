@@ -50,7 +50,7 @@ const PaymentSuccess = () => {
             <div className="flex justify-center mb-4">
               <img src={check} alt="" />
             </div>
-            <h2 className="text-center text-xl font-semibold mb-2">Payment Success!</h2>
+            <h2 className="text-center text-xl font-semimedium mb-2">Payment Success!</h2>
           
             <div className="flex flex-col gap-3 text-sm text-gray-600 mt-12 mb-4">
               <div className="grid justify-between">
@@ -80,7 +80,7 @@ const PaymentSuccess = () => {
 
               <div className="flex justify-between border-dashed border-y-2 py-3">
                 <span>Amount</span>
-                <span className="font-bold text-black">N {transaction.amount}.00</span>
+                <span className="font-medium text-black">N {transaction.amount}.00</span>
               </div>
             </div>
             </div>

@@ -25,15 +25,15 @@ const ConfirmBillPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, bi
           <div>
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>Biller name</p>
-              <h3 className='font-bold'>{biller}</h3>
+              <h3 className='font-medium'>{biller}</h3>
             </div>
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>Meter Number</p>
-              <h3 className='font-bold'>{meterNumber}</h3>
+              <h3 className='font-medium'>{meterNumber}</h3>
             </div>
           </div>
 
-          <button className='bg-primary text-white py-4 rounded-3xl font-semibold' onClick={()=>{setConfirm(); setPinInput();}}>
+          <button className='bg-primary text-white py-4 rounded-3xl font-semimedium' onClick={()=>{setConfirm(); setPinInput();}}>
             Confirm
           </button>
       </div>

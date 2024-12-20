@@ -39,14 +39,14 @@ const Each = ({item}: any) => {
             <div className='flex w-full items-center'>
                 <img src={networks[item.details?.network] || "https://static.vecteezy.com/system/resources/thumbnails/004/896/073/small/money-top-up-on-mobile-phone-device-or-smartphone-concept-illustration-flat-design-eps10-graphic-element-for-icon-infographic-empty-state-app-or-web-ui-vector.jpg"} alt="" className='w-[50px] h-[50px] rounded-full' />
                 <div className='flex flex-col ml-2'>
-                    <h1 className='font-semibold'>{item.type}</h1>
+                    <h1 className='font-semimedium'>{item.type}</h1>
                     
                     <p 
                     style={{color: color}}
                     className='text-xs'>{item.status}</p>
                     <p className='text-xs text-gray-400'>{date} at {time}</p>
                 </div>
-                <h2 className='ml-auto font-bold'>₦{formatPrice(item.amount)}</h2>
+                <h2 className='ml-auto font-medium'>₦{formatPrice(item.amount)}</h2>
             </div>
         </Link>
     )

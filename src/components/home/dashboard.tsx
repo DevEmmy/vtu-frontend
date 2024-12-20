@@ -33,6 +33,7 @@ import { useState, useEffect } from "react";
 import formatPrice from "../../utils/formatPrice";
 import SideNav from "./side-nav";
 import Banner from "../../assets/BANNER.svg";
+import Whatsapp from "./Whatsapp";
 
 
 function dashboard() {
@@ -116,7 +117,7 @@ function dashboard() {
             />
           </div>
           <div>
-            <h1 className="font-semibold ">Hi, {user.firstName}</h1>
+            <h1 className="font-semimedium ">Hi, {user.firstName}</h1>
             <p className="text-[0.65rem] sm:text-sm text-gray-400">
               welcome, let's make payments!
             </p>
@@ -134,7 +135,7 @@ function dashboard() {
           <img src={frame} alt="" className="-mt-2 w-full" />
           <div className="absolute z-30 w-full -mt-2 text-white h-full flex flex-col justify-center pl-6">
             <div className="flex items-center gap-3">
-              <h3 className="text-lg text-gray-100 font-bold">
+              <h3 className="text-lg text-gray-100 font-medium">
                 Wallet Balance
               </h3>
               <p
@@ -144,7 +145,7 @@ function dashboard() {
                 {!hideBalance ? <RiEyeLine /> : <RiEyeCloseLine />}
               </p>
             </div>
-            <div className="flex text-2xl items-center gap-1 font-bold">
+            <div className="flex text-2xl items-center gap-1 font-medium">
               <h1>
                 ₦{hideBalance ? "****" : formatPrice(user.accountBalance)}
               </h1>
@@ -155,7 +156,7 @@ function dashboard() {
 
         <div className="flex flex-col w-full gap-4">
           <div>
-            <h1 className="font-bold ">Quick Action</h1>
+            <h1 className="font-medium ">Quick Action</h1>
           </div>
           <div className="flex justify-between ">
             {quickAction.map((item, index) => {
@@ -177,7 +178,7 @@ function dashboard() {
 
         <div className="w-full flex flex-col gap-4">
           <div className="flex justify-between ">
-            <h1 className="font-bold ">Services</h1>
+            <h1 className="font-medium ">Services</h1>
             <Link to={"/services"} className="text-xs text-primary">
               See More
             </Link>
@@ -215,7 +216,7 @@ function dashboard() {
 
         <div className="w-full flex flex-col gap-4">
           <div className="flex justify-between ">
-            <h1 className="font-bold ">Transactions</h1>
+            <h1 className="font-medium ">Transactions</h1>
             <Link to={"/transactions"} className="text-xs text-primary">
               View all
             </Link>
@@ -236,6 +237,7 @@ function dashboard() {
         profile={false}
         settings={false}
       />
+      <Whatsapp/>
     </div>
   );
 }

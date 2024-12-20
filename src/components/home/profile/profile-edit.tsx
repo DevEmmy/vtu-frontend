@@ -38,7 +38,7 @@ function profileEdit() {
                 <FaArrowLeftLong />
             </Link>
 
-            <h1 className='text-xl font-bold'>Edit Profile</h1>
+            <h1 className='text-xl font-medium'>Edit Profile</h1>
 
             {/* <div className='flex justify-center'>
                 <div className='relative'>

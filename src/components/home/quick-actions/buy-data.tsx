@@ -89,7 +89,7 @@ function buyData() {
           <FaArrowLeftLong />
         </Link>
 
-        <h1 className="text-xl font-bold">Buy Data</h1>
+        <h1 className="text-xl font-medium">Buy Data</h1>
       </div>
 
       <div className="mt-10 w-full flex flex-col gap-3 py-3">
@@ -119,7 +119,7 @@ function buyData() {
                   <HiCheck />
                 </div>
               }
-              <h1 className='font-bold '>{item.dataSize}</h1>
+              <h1 className='font-medium '>{item.dataSize}</h1>
               <p className='text-gray-500 text-sm'>₦{item.price}</p>
               <p className='text-[10px]'>{item.duration}</p>
             </div>

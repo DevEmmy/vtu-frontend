@@ -16,14 +16,14 @@ const OnB1 = ({ next }: Props) => {
       </div>
 
       <div className="onboarding_container">
-        <p className="text-[22px] font-bold">Welcome to VTU!</p>
+        <p className="text-[22px] font-medium">Welcome to VTU!</p>
         <p className="text-sm">
           Hi there! We're excited to have you on board. VTU is your one-stop app
           for all your payment needs.
         </p>
 
         <button
-          className=" bg-primary text-white font-semibold py-2 px-10 rounded-full"
+          className=" bg-primary text-white font-semimedium py-2 px-10 rounded-full"
           onClick={next}
         >
           Next

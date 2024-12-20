@@ -27,12 +27,12 @@ function NewAccount() {
     <div className='flex flex-col px-3 py-5 gap-9'>
       <RiArrowLeftLine className='text-xl' />
       <div>
-        <h1 className='font-bold text-3xl'>Create Account</h1>
+        <h1 className='font-medium text-3xl'>Create Account</h1>
         <p className='text-sm'>Sign in to continue</p>
       </div>
 
       <div className='bg-pale px-4 py-2 rounded-3xl w-full flex gap-5 justify-stretch'>
-        <button className='text-primary bg-white rounded-2xl w-full font-semibold'>
+        <button className='text-primary bg-white rounded-2xl w-full font-semimedium'>
           Sign Up
         </button>
 

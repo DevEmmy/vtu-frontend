@@ -46,15 +46,15 @@ const SideNav: React.FC<Props> = ({ isOpen, setIsOpen }) => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
-        <div className="flex flex-col bg-[#C0E0FF] justify-between items-center p-4">
+        {/* <div className="flex flex-col  justify-between items-center ">
           <button onClick={toggleNav} className="absolute text-2xl right-2">
             <TiTimes className="text-blue-400" />
           </button>
-          <img src="./LOGO.svg" alt="VTU Logo" />
-        </div>
+          <img src="./logo.png" alt="VTU Logo" className="w-[250px] h-[250p]"/>
+        </div> */}
 
         <div className="p-4 flex flex-col justify-evenly items-start w-full gap-3 mt-2">
-          <sub>Go To</sub>
+          <p className="text-[20px] font-semimedium">Go To</p>
           {navItems.map((item, index) => (
             <div
               key={index}

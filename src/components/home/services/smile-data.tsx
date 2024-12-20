@@ -55,7 +55,7 @@ function smileData() {
             <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Smile Data</h1>
+        <h1 className='text-xl font-medium'>Smile Data</h1>
 
         <div className='flex flex-col gap-5'>
             <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
@@ -66,7 +66,7 @@ function smileData() {
         <div className='grid grid-cols-5'>
             {offers.map((_, index) =>(
                 <div key={index} className='py-1 relative flex justify-center'>
-                    <h1 className='text-xs text-gray-500 text-center hover:scale-125 hover:font-bold hover:text-black'>{offers[index]} </h1>
+                    <h1 className='text-xs text-gray-500 text-center hover:scale-125 hover:font-medium hover:text-black'>{offers[index]} </h1>
                     <div className='absolute mt-6 w-[40%] z-10 border-b-2 border-primary'></div>
                 </div>
             ))}
@@ -75,7 +75,7 @@ function smileData() {
         <div className='grid grid-cols-3 gap-4 p-3'>
             {bestOffers.map((item, index) =>(
                 <div key={index} onClick={() => toggleConfirm()} className='flex flex-col gap-2 items-center text-center py-7 border-2 rounded-lg border-primary'>
-                    <h1 className='font-bold '>{item.plan}</h1>
+                    <h1 className='font-medium '>{item.plan}</h1>
                     <p className='text-gray-500 text-sm'>₦{item.price}</p>
                     <p className='text-[10px]'>{item.timeSpan}</p>
                 </div>

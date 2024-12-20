@@ -42,7 +42,7 @@ function changePassword() {
             <FaArrowLeftLong />
         </Link>
         <div>
-        <h2 className="text-3xl font-bold">Change Password</h2>
+        <h2 className="text-3xl font-medium">Change Password</h2>
         <p className="">{isTrue ? 'Type in your new password':'Type in your previous password to continue'}</p>
         </div>
         
@@ -97,10 +97,10 @@ function changePassword() {
         <div className='absolute top-0 left-0 w-[100%] h-full z-10 flex flex-col justify-end bg-[rgba(0,0,0,0.4)]'>
             <div className=' bg-white py-20 px-3 rounded-t-2xl flex items-center flex-col gap-7'>
           <img src={check} alt="" />
-          <h1 className='font-semibold text-xl'>Successful</h1>
+          <h1 className='font-semimedium text-xl'>Successful</h1>
           <p className='text-sm text-gray-500'>You have successfully changed your password</p>
           <Link to={"/account-settings"} className='w-full'>
-              <button className='font-bold text-white bg-primary w-full py-2 rounded-3xl'>Done</button>
+              <button className='font-medium text-white bg-primary w-full py-2 rounded-3xl'>Done</button>
           </Link>
           
         </div>

@@ -3,70 +3,70 @@ export const dataPlans : any = {
       { 
         code: "500", 
         description: "MTN SME Data 500MB – 30 Days",
-        price: "200", 
+        price: "189", 
         dataSize: "500MB", 
         duration: "30 Days" 
       },
       { 
         code: "M1024", 
         description: "MTN SME Data 1GB – 30 Days",
-        price: "1024", 
+        price: "299", 
         dataSize: "1GB", 
         duration: "30 Days" 
       },
       { 
         code: "M2024", 
         description: "MTN SME Data 2GB – 30 Days",
-        price: "2024", 
+        price: "599", 
         dataSize: "2GB", 
         duration: "30 Days" 
       },
       { 
         code: "3000", 
         description: "MTN SME Data 3GB – 30 Days",
-        price: "3000", 
+        price: "899", 
         dataSize: "3GB", 
         duration: "30 Days" 
       },
       { 
         code: "5000", 
         description: "MTN SME Data 5GB – 30 Days",
-        price: "5000", 
+        price: "1499", 
         dataSize: "5GB", 
         duration: "30 Days" 
       },
       { 
         code: "10000", 
         description: "MTN SME Data 10GB – 30 Days",
-        price: "10000", 
+        price: "2999", 
         dataSize: "10GB", 
         duration: "30 Days" 
       },
       { 
         code: "mtn-20hrs-1500", 
         description: "MTN Data 6GB – 7 Days",
-        price: "1500", 
+        price: "1489", 
         dataSize: "6GB", 
         duration: "7 Days" 
       },
       { 
         code: "mtn-30gb-8000", 
         description: "MTN Data 30GB – 30 Days",
-        price: "8000", 
+        price: "7899", 
         dataSize: "30GB", 
         duration: "30 Days" 
       },
       { 
         code: "mtn-40gb-10000", 
         description: "MTN Data 40GB – 30 Days",
-        price: "10000", 
+        price: "9859", 
         dataSize: "40GB", 
         duration: "30 Days" 
       },
       { 
         code: "mtn-75gb-15000", 
         description: "MTN Data 75GB – 30 Days",
-        price: "15000", 
+        price: "14899", 
         dataSize: "75GB", 
         duration: "30 Days" 
       },
@@ -154,108 +154,108 @@ export const dataPlans : any = {
       { 
         code: "AIRTEL500MB", 
         description: "Airtel Data 500MB (Gift) – 30 Days",
-        price: "500", 
+        price: "189", 
         dataSize: "500MB", 
         duration: "30 Days" 
       },
       { 
         code: "AIRTEL1GB", 
         description: "Airtel Data 1GB (Gift) – 30 Days",
-        price: "1000", 
+        price: "299", 
         dataSize: "1GB", 
         duration: "30 Days" 
       },
       { 
         code: "AIRTEL2GB", 
         description: "Airtel Data 2GB (Gift)– 30 Days",
-        price: "2000", 
+        price: "599", 
         dataSize: "2GB", 
         duration: "30 Days" 
       },
       { 
         code: "AIRTEL5GB", 
         description: "Airtel Data 5GB (Gift)– 30 Days",
-        price: "5000", 
+        price: "1499", 
         dataSize: "5GB", 
         duration: "30 Days" 
       },
       { 
         code: "AIRTEL10GB", 
         description: "Airtel Data 10GB (Gift)– 30 Days",
-        price: "10000", 
+        price: "2999", 
         dataSize: "10GB", 
         duration: "30 Days" 
       },
       { 
         code: "AIRTEL15GB", 
         description: "Airtel Data 15GB (Gift)– 30 Days",
-        price: "15000", 
+        price: "4489", 
         dataSize: "15GB", 
         duration: "30 Days" 
       },
       { 
         code: "AIRTEL20GB", 
         description: "Airtel Data 20GB (Gift)– 30 Days",
-        price: "20000", 
+        price: "5989", 
         dataSize: "20GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-1100", 
         description: "Airtel Data 1.5GB – 30 Days",
-        price: "1100", 
+        price: "1069", 
         dataSize: "1.5GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-1300", 
         description: "Airtel Data 2GB – 30 Days",
-        price: "1300", 
+        price: "1279", 
         dataSize: "2GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-1650", 
         description: "Airtel Data 3GB – 30 Days",
-        price: "1650", 
+        price: "1629", 
         dataSize: "3GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-2200", 
         description: "Airtel Data 4.5GB – 30 Days",
-        price: "2200", 
+        price: "1279", 
         dataSize: "4.5GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-3300", 
         description: "Airtel Data 10GB – 30 Days",
-        price: "3300", 
+        price: "1629", 
         dataSize: "10GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-5500", 
         description: "Airtel Data 20GB – 30 Days",
-        price: "5500", 
+        price: "5479", 
         dataSize: "20GB", 
         duration: "30 Days" 
       },
       { 
         code: "airt-11000", 
         description: "Airtel Data 50GB – 90 Days",
-        price: "11000", 
+        price: "10699", 
         dataSize: "50GB", 
         duration: "90 Days" 
       },
-      { 
-        code: "airt-22000", 
-        description: "Airtel Data 100GB – 90 Days",
-        price: "22000", 
-        dataSize: "100GB", 
-        duration: "90 Days" 
-      },
+      // { 
+      //   code: "airt-22000", 
+      //   description: "Airtel Data 100GB – 90 Days",
+      //   price: "22000", 
+      //   dataSize: "100GB", 
+      //   duration: "90 Days" 
+      // },
     ],
     "9mobile": [
         { 
@@ -265,76 +265,76 @@ export const dataPlans : any = {
           dataSize: "200MB", 
           duration: "3 Days" 
         },
-        { 
-          code: "9mobile-500", 
-          description: "9mobile Data 500MB – 30 Days",
-          price: "500", 
-          dataSize: "500MB", 
-          duration: "30 Days" 
-        },
+        // { 
+        //   code: "9mobile-500", 
+        //   description: "9mobile Data 500MB – 30 Days",
+        //   price: "500", 
+        //   dataSize: "500MB", 
+        //   duration: "30 Days" 
+        // },
         { 
           code: "9mobile-1000", 
           description: "9mobile Data 1GB – 30 Days",
-          price: "1000", 
+          price: "979", 
           dataSize: "1GB", 
           duration: "30 Days" 
         },
         { 
           code: "9mobile-2000", 
           description: "9mobile Data 2.5GB – 30 Days",
-          price: "2000", 
+          price: "1979", 
           dataSize: "2.5GB", 
           duration: "30 Days" 
         },
-        { 
-          code: "9mobile-3000", 
-          description: "9mobile Data 4GB – 30 Days",
-          price: "3000", 
-          dataSize: "4GB", 
-          duration: "30 Days" 
-        },
-        { 
-          code: "9mobile-4000", 
-          description: "9mobile Data 5.5GB – 30 Days",
-          price: "4000", 
-          dataSize: "5.5GB", 
-          duration: "30 Days" 
-        },
+        // { 
+        //   code: "9mobile-3000", 
+        //   description: "9mobile Data 4GB – 30 Days",
+        //   price: "3000", 
+        //   dataSize: "4GB", 
+        //   duration: "30 Days" 
+        // },
+        // { 
+        //   code: "9mobile-4000", 
+        //   description: "9mobile Data 5.5GB – 30 Days",
+        //   price: "4000", 
+        //   dataSize: "5.5GB", 
+        //   duration: "30 Days" 
+        // },
         { 
           code: "9mobile-5000", 
           description: "9mobile Data 11.5GB – 30 Days",
-          price: "5000", 
+          price: "7899", 
           dataSize: "11.5GB", 
           duration: "30 Days" 
         },
         { 
           code: "9mobile-8000", 
           description: "9mobile Data 15GB – 30 Days",
-          price: "8000", 
+          price: "9859", 
           dataSize: "15GB", 
           duration: "30 Days" 
         },
-        { 
-          code: "9mobile-10000", 
-          description: "9mobile Data 40GB – 30 Days",
-          price: "10000", 
-          dataSize: "40GB", 
-          duration: "30 Days" 
-        },
-        { 
-          code: "9mobile-15000", 
-          description: "9mobile Data 75GB – 30 Days",
-          price: "15000", 
-          dataSize: "75GB", 
-          duration: "30 Days" 
-        },
-        { 
-          code: "9mobile-20000", 
-          description: "9mobile Data 110GB – 30 Days",
-          price: "20000", 
-          dataSize: "110GB", 
-          duration: "30 Days" 
-        },
+        // { 
+        //   code: "9mobile-10000", 
+        //   description: "9mobile Data 40GB – 30 Days",
+        //   price: "10000", 
+        //   dataSize: "40GB", 
+        //   duration: "30 Days" 
+        // },
+        // { 
+        //   code: "9mobile-15000", 
+        //   description: "9mobile Data 75GB – 30 Days",
+        //   price: "15000", 
+        //   dataSize: "75GB", 
+        //   duration: "30 Days" 
+        // },
+        // { 
+        //   code: "9mobile-20000", 
+        //   description: "9mobile Data 110GB – 30 Days",
+        //   price: "20000", 
+        //   dataSize: "110GB", 
+        //   duration: "30 Days" 
+        // },
       ],
   };
   

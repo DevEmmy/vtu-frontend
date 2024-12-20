@@ -92,7 +92,7 @@ function services() {
       <Link to={"/"} className="text-xl">
         <FaArrowLeftLong />
       </Link>
-      <h1 className="text-xl font-bold">Services</h1>
+      <h1 className="text-xl font-medium">Services</h1>
       <div className="grid grid-cols-4">
         {service.map((item, index) =>
           item.external ? (

@@ -42,7 +42,7 @@ function settings() {
             <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Settings</h1>
+        <h1 className='text-xl font-medium'>Settings</h1>
 
         <div className='flex flex-col gap-4'>
             {settings.map((item, index) =>(
@@ -57,7 +57,7 @@ function settings() {
             ))}
         </div>
 
-        <div onClick={logout} className='flex justify-center text-primary text-sm font-bold'>
+        <div onClick={logout} className='flex justify-center text-primary text-sm font-medium'>
             <p>Log out</p>
         </div>
 

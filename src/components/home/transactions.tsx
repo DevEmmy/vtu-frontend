@@ -65,20 +65,20 @@ function transactions() {
           <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Transactions</h1>
+        <h1 className='text-xl font-medium'>Transactions</h1>
 
         <div>
           <div className='flex items-center'>
-            <h3 className='font-semibold'>Jun</h3>
+            <h3 className='font-semimedium'>Jun</h3>
             <RiArrowDropDownLine className='text-3xl' />
           </div>
 
           <div className='flex py-2 border-b-2 gap-3'>
             <div className='font-light'>
-              <h4>In <span className='font-semibold'>$500,000</span></h4>
+              <h4>In <span className='font-semimedium'>$500,000</span></h4>
             </div>
             <div className='font-light'>
-              <h4>Out <span className='font-semibold'>$500,000</span></h4>
+              <h4>Out <span className='font-semimedium'>$500,000</span></h4>
             </div>
           </div>
         </div>

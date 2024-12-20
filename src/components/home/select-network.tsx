@@ -71,7 +71,7 @@ const selectNetwork: React.FC<ValueProp> = ({ networkValue, setIsNetwork }) =>  
         {Object.keys(network).map((item , index) =>(
             <div className='flex items-center' onClick={() => handleSelectNetwork(item as Network)}>
                 <img src={networkType[index].image} alt="" />
-                <h2 className='font-bold ml-2'>{networkType[index].name}</h2>
+                <h2 className='font-medium ml-2'>{networkType[index].name}</h2>
                 <div className='ml-auto'>{network[item as Network] ? <MdOutlineRadioButtonChecked /> :<MdOutlineRadioButtonUnchecked />}</div>
             </div>
         ))}

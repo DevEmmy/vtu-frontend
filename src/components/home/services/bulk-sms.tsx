@@ -21,7 +21,7 @@ function BulkSms() {
       <Link to={"/"} className='text-xl'>
         <FaArrowLeftLong />
       </Link>
-      <h1 className='text-xl font-bold'>Bulk SMS</h1>
+      <h1 className='text-xl font-medium'>Bulk SMS</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
           <input
@@ -46,7 +46,7 @@ function BulkSms() {
         <button
           type="submit"
           disabled={!phoneNumber || !message}
-          className={`text-white text-center font-semibold py-3 bg-primary rounded-3xl ${
+          className={`text-white text-center font-semimedium py-3 bg-primary rounded-3xl ${
             !phoneNumber || !message ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
           }`}
         >

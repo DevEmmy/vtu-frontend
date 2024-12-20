@@ -44,7 +44,7 @@ function notificationSettings() {
             <FaArrowLeftLong />
         </Link>
 
-        <h1 className='text-xl font-bold'>Account Settings</h1>
+        <h1 className='text-xl font-medium'>Account Settings</h1>
 
         <div className='flex flex-col gap-4'>
             {settings.map((item, index) =>(

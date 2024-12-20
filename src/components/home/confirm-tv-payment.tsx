@@ -25,19 +25,19 @@ const ConfirmTVPayment: React.FC<any> = ({ setConfirm, setPinInput, amount, bill
           <div>
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>Biller name</p>
-              <h3 className='font-bold'>{biller}</h3>
+              <h3 className='font-medium'>{biller}</h3>
             </div>
             <div className='flex justify-between py-1'>
               {/* <p className='text-gray-500'>Service Provider</p>
-              <h3 className='font-bold'>{serviceProvider}</h3> */}
+              <h3 className='font-medium'>{serviceProvider}</h3> */}
             </div>
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>Smartcard Number</p>
-              <h3 className='font-bold'>{smartcardNumber}</h3>
+              <h3 className='font-medium'>{smartcardNumber}</h3>
             </div>
           </div>
 
-          <button className='bg-primary text-white py-4 rounded-3xl font-semibold' onClick={()=>{setConfirm(); setPinInput();}}>
+          <button className='bg-primary text-white py-4 rounded-3xl font-semimedium' onClick={()=>{setConfirm(); setPinInput();}}>
             Confirm
           </button>
       </div>

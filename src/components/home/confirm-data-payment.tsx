@@ -25,22 +25,22 @@ const ConfirmDataPayment: React.FC<any> = ({ setConfirm, setPinInput, network, p
           <div>
             <div className='flex justify-between py-1'>
               <p className='text-gray-500'>Selected Network</p>
-              <h3 className='font-bold'>{network}</h3>
+              <h3 className='font-medium'>{network}</h3>
             </div>
             <div className='flex justify-between py-2'>
               <p className='text-gray-500'>Phone Number</p>
-              <h3 className='font-bold'>{phone}</h3>
+              <h3 className='font-medium'>{phone}</h3>
             </div>
           </div>
 
           <div className='flex items-center py-2 px-3 border-2 rounded-xl border-primary gap-2'>
-            <h3 className='font-bold'>{dataSize}</h3>
+            <h3 className='font-medium'>{dataSize}</h3>
             <p className='text-sm'>{amount}</p>
             <p className='text-xs'>{duration}</p>
             <img src={check} alt="" className='w-[30px] ml-auto'/>
           </div>
 
-          <button className='bg-primary text-white py-4 rounded-3xl font-semibold' onClick={()=>{setConfirm(); setPinInput();}}>
+          <button className='bg-primary text-white py-4 rounded-3xl font-semimedium' onClick={()=>{setConfirm(); setPinInput();}}>
             Confirm
           </button>
       </div>

@@ -42,7 +42,7 @@ const pinInput: React.FC<ConfirmPaymentProps> = ({ setPinInput, action }) =>{
     
     <div className='bg-white w-full py-8 pt-14 rounded-t-3xl px-5 text-center'>
       <div className='relative flex justify-center items-center'>
-        <h1 className='font-bold text-2xl'>Confirm to pay</h1>
+        <h1 className='font-medium text-2xl'>Confirm to pay</h1>
         <IoMdClose className='absolute right-0 text-2xl' onClick={()=>setPinInput()}/>
       </div>
         

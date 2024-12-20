@@ -54,7 +54,7 @@ function fundWallet() {
         <Link to={"/"} className='text-xl'>
             <FaArrowLeftLong />
         </Link>
-        <h1 className='text-xl font-bold'>Fund Wallet</h1>
+        <h1 className='text-xl font-medium'>Fund Wallet</h1>
         <div className="flex flex-col gap-5">
           <p>How Much do you want to fund?</p>
           <input type="number" className="border-b focus:outline-none p-3" placeholder="100 - 100,000" onChange={(e: any)=> setAmount(e.target.value)}/>

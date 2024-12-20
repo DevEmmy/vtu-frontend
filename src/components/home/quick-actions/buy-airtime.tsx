@@ -111,7 +111,7 @@ function buyAirtime() {
           <FaArrowLeftLong />
         </Link>
 
-        <h1 className="text-xl font-bold">Buy Airtime</h1>
+        <h1 className="text-xl font-medium">Buy Airtime</h1>
       </div>
 
       <div className="flex flex-col gap-5 mt-20">
@@ -144,7 +144,7 @@ function buyAirtime() {
         </div>
         <div className="flex py-2 border-b-2 text-sm items-center justify-between">
           <div className="flex items-center gap-2">
-            <h1 className="font-bold mr-2 text-[24px]">₦</h1>
+            <h1 className="font-medium mr-2 text-[24px]">₦</h1>
             <input
               type="text"
               value={inputValue}
@@ -165,7 +165,7 @@ function buyAirtime() {
             Pay
           </button>
         </div>
-        <span className="font-semibold">Offers</span>
+        <span className="font-semimedium">Offers</span>
         <div className="grid grid-cols-3 gap-4 ">
           {airtimeOption.map((item: any, index: number) => (
             <div

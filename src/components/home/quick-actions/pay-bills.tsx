@@ -17,19 +17,16 @@ function payBills() {
 
   const [bill, setBill] = React.useState("phcn");
   const electricityBills = [
-    {
-      title: "PHCN",
-      value: "phcn",
-    },
-    {
-      title: "EKEDP",
-      value: "ekedp",
-    },
-    {
-      title: "AEDC",
-      value: "aedc",
-    },
-  ];
+    { "title": "AEDC", "value": "abuja-electric" },
+    { "title": "EKEDC", "value": "eko-electric" },
+    { "title": "IBEDC", "value": "ibadan-electric" },
+    { "title": "IKEDC", "value": "ikeja-electric" },
+    { "title": "JEDplc", "value": "jos-electric" },
+    { "title": "KAEDCO", "value": "kaduna-electric" },
+    { "title": "KEDCO", "value": "kano-electric" },
+    { "title": "PHED", "value": "portharcourt-electric" }
+  ]
+  
 
   const priceOption = [
     { price: 1000 },
@@ -77,7 +74,7 @@ function payBills() {
         <FaArrowLeftLong />
       </Link>
 
-      <h1 className="text-xl font-bold">Pay Electricity Bills</h1>
+      <h1 className="text-xl font-medium">Pay Electricity Bills</h1>
 
       <div className="flex flex-col gap-5">
         <div className="bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3">
@@ -110,7 +107,7 @@ function payBills() {
       </div>
       <div className="flex py-2 border-b-2 text-sm items-center justify-between">
         <div className="flex items-center gap-2">
-          <h1 className="font-bold mr-2">₦</h1>
+          <h1 className="font-medium mr-2">₦</h1>
           <input
             type="text"
             value={inputValue}

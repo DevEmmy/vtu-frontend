@@ -45,7 +45,7 @@ const PasswordInputScreen = () => {
     <div className={`flex flex-col px-3 py-5 gap-8 relative`}>
       <RiArrowLeftLine />
       <div>
-        <h2 className="text-3xl font-bold">Security</h2>
+        <h2 className="text-3xl font-medium">Security</h2>
         <p className="">Create a Pin to secure your account</p>
       </div>
 
@@ -99,12 +99,12 @@ const PasswordInputScreen = () => {
         <div className="absolute top-0 left-0 w-[100%] h-full z-10 flex flex-col justify-end bg-[rgba(0,0,0,0.4)]">
           <div className=" bg-white py-20 px-3 rounded-t-2xl flex items-center flex-col gap-7">
             <img src={check} alt="" />
-            <h1 className="font-semibold text-xl">Successful</h1>
+            <h1 className="font-semimedium text-xl">Successful</h1>
             <p className="text-sm text-gray-500">
               You have successfully set up a password
             </p>
             <Link to={"/"} className="w-full">
-              <button className="font-bold text-white bg-primary w-full py-4 rounded-3xl">
+              <button className="font-medium text-white bg-primary w-full py-4 rounded-3xl">
                 Get Started
               </button>
             </Link>

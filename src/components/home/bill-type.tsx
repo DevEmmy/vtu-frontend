@@ -31,7 +31,7 @@ const billType = () =>  {
       <div className='bg-white rounded-t-3xl w-full flex flex-col gap-6 px-5 py-8'>
         {Object.keys(bill).map((item , ) =>(
             <div key={item} className="flex items-center justify-between" onClick={() => toggleBill(item as BillType)}>
-               <h2 className='font-bold ml-2'>{item}</h2>
+               <h2 className='font-medium ml-2'>{item}</h2>
                <div className='ml-auto'>{bill[item as BillType] ? <MdOutlineRadioButtonChecked /> :<MdOutlineRadioButtonUnchecked />}</div>
             </div>
         ))}

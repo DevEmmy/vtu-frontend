@@ -42,7 +42,7 @@ function EducationalPins() {
         <FaArrowLeftLong />
       </Link>
 
-      <h1 className='text-xl font-bold'>Educational Pins</h1>
+      <h1 className='text-xl font-medium'>Educational Pins</h1>
 
       <div className='flex flex-col gap-5'>
         <div className='bg-gray-100 rounded-3xl flex items-center py-3 justify-between px-3'>
@@ -64,7 +64,7 @@ function EducationalPins() {
 
       <div className='flex py-2 border-b-2 text-sm items-center'>
       <div className="flex items-center gap-2">
-        <h1 className='font-bold mr-2'>₦</h1>
+        <h1 className='font-medium mr-2'>₦</h1>
         <div className='flex items-center text-gray-500'>
           <input
             type="text"

@@ -102,7 +102,7 @@ function TvSubscription() {
         <Link to="/" className="text-xl">
           <FaArrowLeftLong />
         </Link>
-        <h1 className='text-xl font-bold'>TV Subscription</h1>
+        <h1 className='text-xl font-medium'>TV Subscription</h1>
       </div>
 
       <div className='flex flex-col gap-5 mt-20'>
@@ -129,7 +129,7 @@ function TvSubscription() {
 
       <div className='flex items-center'>
         <div className='relative flex flex-col-reverse items-center'>
-          <h3 className='font-semibold'>Offers</h3>
+          <h3 className='font-semimedium'>Offers</h3>
           <div className='w-[40%] absolute border-b-2 border-primary'></div>
         </div>
       </div>
@@ -145,10 +145,10 @@ function TvSubscription() {
           >
             <div className='flex items-center justify-between'>
               <div>
-                <h1 className='text-2xl font-bold'>{TV.toUpperCase()}</h1>
-                <p className='font-semibold text-xl'>{item.package}</p>
+                <h1 className='text-2xl font-medium'>{TV.toUpperCase()}</h1>
+                <p className='font-semimedium text-xl'>{item.package}</p>
               </div>
-              <div className='px-3 py-1 text-primary bg-white font-bold'>
+              <div className='px-3 py-1 text-primary bg-white font-medium'>
                 NGN{item.price}
               </div>
             </div>
