@@ -2,20 +2,22 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoCopyOutline } from "react-icons/io5";
 import { GoShareAndroid } from "react-icons/go";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useNavigation } from 'react-router-dom';
 import  useMonnify  from "../../../hooks/useMonnify";
 import { useState } from "react";
 import { useFundWallet, useUser } from "../../../hooks/Auth";
 import { PaystackButton } from "react-paystack";
 import { v4 as uuidv4 } from 'uuid';
+import { PaystackProps } from "react-paystack/dist/types";
 
 function fundWallet() {
   const [amount, setAmount] = useState(0)
   const {success, isError, isLoading, fundWalletFn} = useFundWallet();
+  const router  = useNavigate()
 
   const {user} = useUser();
 
-  const config = {
+  const config : PaystackProps= {
     reference: uuidv4(),
     email: user.email,
     amount: amount * 100,
@@ -32,7 +34,8 @@ function fundWallet() {
       ref: reference.reference,
     }
     console.log(data);
-    fundWalletFn({amount: data.amount, ref: config.reference})
+    router("/")
+    // fundWalletFn({amount: data.amount, ref: config.reference})
     // createTransaction(data)
   };
 
