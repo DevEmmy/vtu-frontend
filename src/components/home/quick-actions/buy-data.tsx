@@ -74,7 +74,7 @@ function buyData() {
           variationId: dataPlans[network][dataSelected as number].code
         }
       },
-      // pin
+      pin
     };
 
     makeTransaction(data);
