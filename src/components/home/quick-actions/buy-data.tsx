@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { TiContacts } from "react-icons/ti";
 import ConfirmDataPayment from '../confirm-data-payment';
 import PinInput from '../pin-input'
-import { dataPlans } from "../../../utils/dataPlans";
 import { HiCheck } from "react-icons/hi2";
 import { useMakeTransaction } from "../../../hooks/MakePayments";
 import { useScrollTop } from "../../../hooks/use-scroll-top";
 import Loader from "../../Loader";
+import usePlans from "../../../hooks/use-plan";
 
 
 function buyData() {
   const isScrolled = useScrollTop();
+  const {plansData, fetchPlans} = usePlans()
+  const [dataPlans, setDataPlans] = useState(null)
+
+  const fetchD = async () => {
+    let data = await fetchPlans();
+    console.log(data);
+    setDataPlans(data);
+  }
+
+  useEffect(()=>{
+    fetchD();
+  }, [])
 
   const [confirm, setConfirm] = React.useState(false);
   const toggleConfirm = () => {
@@ -24,6 +36,7 @@ function buyData() {
   const togglePinInput = () => {
     setPinInput(prev => !prev);
   };
+  
 
   const offers = ['Best Offers', 'General', 'Social', 'Voice', 'HyNetFlex'];
   
@@ -79,6 +92,10 @@ function buyData() {
 
     makeTransaction(data);
   };
+
+  if(dataPlans === null){
+    return null;
+  }
 
   return (
     <div className={`px-3 py-5 w-[100%] relative flex flex-col gap-7 h-full`}>

@@ -8,7 +8,7 @@ type Plan = {
 };
 
 export default function usePlans() {
-  const [plansData, setPlans] = useState<Record<string, Plan[]>>({});
+  const [plansData, setPlans] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -18,7 +18,9 @@ export default function usePlans() {
     setError(null);
     try {
       const response = await axiosConfig.get("/plans"); // Replace with actual API
+      console.log(response.data.data);
       setPlans(response.data.data);
+      return response.data.data;
     } catch (err) {
       setError("Failed to fetch plans");
       console.error(err);
@@ -28,8 +30,9 @@ export default function usePlans() {
   };
 
   useEffect(() => {
-    fetchPlans();
+    let data = fetchPlans();
   }, []);
+  console.log(plansData);
 
   return { plansData, loading, error, fetchPlans };
 }
