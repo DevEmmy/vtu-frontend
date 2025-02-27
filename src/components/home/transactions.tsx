@@ -67,7 +67,7 @@ function transactions() {
 
         <h1 className='text-xl font-medium'>Transactions</h1>
 
-        <div>
+        {/* <div>
           <div className='flex items-center'>
             <h3 className='font-semimedium'>Jun</h3>
             <RiArrowDropDownLine className='text-3xl' />
@@ -81,7 +81,7 @@ function transactions() {
               <h4>Out <span className='font-semimedium'>$500,000</span></h4>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className='flex flex-col gap-5 py-1 w-full'>
           {transactions?.map((item: any, index: number) => (
