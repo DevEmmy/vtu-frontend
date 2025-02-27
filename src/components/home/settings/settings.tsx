@@ -18,21 +18,21 @@ function settings() {
             title: 'Account Settings',
             link: '/account-settings'
         },
-        {
-            icon: <FaRegBell />,
-            title: 'Notification Settings',
-            link: '/notification-settings'
-        },
-        {
-            icon: <MdOutlinePrivacyTip />,
-            title: 'Privacy Settings',
-            link: '/privacy-settings'
-        },
-        {
-            icon: <LiaHeadsetSolid />,
-            title: 'Help & Support',
-            link: '/help-and-support'
-        },
+        // {
+        //     icon: <FaRegBell />,
+        //     title: 'Notification Settings',
+        //     link: '/notification-settings'
+        // },
+        // {
+        //     icon: <MdOutlinePrivacyTip />,
+        //     title: 'Privacy Settings',
+        //     link: '/privacy-settings'
+        // },
+        // {
+        //     icon: <LiaHeadsetSolid />,
+        //     title: 'Help & Support',
+        //     link: '/help-and-support'
+        // },
     ]
   return (
     <div>
