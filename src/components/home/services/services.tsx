@@ -40,12 +40,6 @@ function services() {
       external: false,
     },
     {
-      img: <IoChatbubblesOutline />,
-      title: "Bulk SMS",
-      link: "/bulk-sms",
-      external: false,
-    },
-    {
       img: <IoSchoolOutline />,
       title: "Educational Pin",
       link: "/educational-pins",
@@ -66,6 +60,12 @@ function services() {
   ];
 
   const unavailableServices = [
+    {
+      img: <IoChatbubblesOutline />,
+      title: "Bulk SMS",
+      link: "/bulk-sms",
+      external: false,
+    },
     {
       img: <TbMobiledata />,
       title: "Smile Data",
